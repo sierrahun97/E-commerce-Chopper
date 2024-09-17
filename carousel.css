@@ -1,0 +1,23 @@
+/* Estilo para el contenedor del carrusel */
+.carousel-container {
+    width: 98%; /* Ajusta el ancho del contenedor del carrusel */
+    max-width: 300%;
+    border-radius: 80px 80px 300px 80px; /* Establece un ancho máximo */
+    margin: 20px auto; /* Añade márgenes de 20px y centra el contenedor horizontalmente */
+    overflow: hidden; /* Asegura que el contenido no se desborde fuera del contenedor */
+}
+
+/* Estilo para el carrusel */
+.carousel-inner {
+    height: 450px; /* Ajusta la altura del carrusel (puedes cambiar este valor) */
+}
+
+/* Estilo para las imágenes del carrusel */
+.carousel-inner img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: 100%; /* Ajusta la altura de la imagen al 100% del contenedor */
+    object-fit: cover; /* Mantiene la proporción de aspecto y cubre el área del contenedor */
+}
+
+
+
