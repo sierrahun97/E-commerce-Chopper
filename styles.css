@@ -1,0 +1,11 @@
+/* ----- estilos footer ----- */
+.botonFooter{
+    background-color: #955EB7;
+    color: white;
+    border-color: #955EB7;
+}
+.botonFooter:hover{
+    background-color: white;
+    color: #955EB7;
+    border-color: #955EB7;
+}
