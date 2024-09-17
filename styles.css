@@ -1,4 +1,8 @@
 /* ----- estilos footer ----- */
+footer {
+    background-color: rgb(247, 244, 244);
+    padding: 10px 45px;
+}
 .botonFooter{
     background-color: #955EB7;
     color: white;
