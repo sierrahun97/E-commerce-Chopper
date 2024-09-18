@@ -1,0 +1,158 @@
+/* Importa la fuente "Poppins" desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* Estilos globales para todos los elementos */
+* {
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina rellenos por defecto */
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total del elemento */
+    font-family: "Poppins", sans-serif; /* Aplica la fuente "Poppins" */
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+    display: flex; /* Usa Flexbox para alinear el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Asegura que el cuerpo tenga al menos la altura de la vista */
+    background: #f4f4f4; /* Color de fondo gris claro */
+}
+
+/* Estilos para el contenedor de las tarjetas */
+#container {
+    display: flex; /* Usa Flexbox para alinear las tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    align-items: center; /* Centra las tarjetas verticalmente */
+    flex-wrap: nowrap; /* No permite que las tarjetas se envuelvan en múltiples líneas */
+    gap: 50px; /* Espacio entre tarjetas */
+    padding: 50px; /* Espacio alrededor del contenedor */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si las tarjetas son más anchas que el contenedor */
+}
+
+/* Estilos para las tarjetas dentro del contenedor */
+#container .card {
+    position: relative; /* Posicionamiento relativo para posicionar elementos hijos */
+    display: flex; /* Usa Flexbox para alinear el contenido de la tarjeta */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    flex-direction: column; /* Alinea los elementos en columna */
+    width: 300px; /* Ancho fijo de la tarjeta */
+    height: 300px; /* Altura fija de la tarjeta */
+    background: #fff; /* Fondo blanco */
+    border-radius: 20px; /* Bordes redondeados */
+    margin-top: 4%; /* Margen superior */
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15); /* Sombra para darle profundidad */
+    transition: 0.5s; /* Transición suave para los cambios de estilo */
+}
+
+/* Estilo de la tarjeta cuando se pasa el ratón sobre ella */
+#container .card:hover {
+    height: 400px; /* Aumenta la altura de la tarjeta al pasar el ratón */
+}
+
+/* Estilos para la imagen dentro de la tarjeta */
+#container .card .img8x {
+    position: absolute; /* Posicionamiento absoluto para superponer la imagen */
+    top: 20px; /* Posiciona la imagen desde el borde superior */
+    width: 250px; /* Ancho fijo de la imagen */
+    height: 220px; /* Altura fija de la imagen */
+    background: #333; /* Fondo gris oscuro en caso de que la imagen no cargue */
+    border-radius: 12px; /* Bordes redondeados para la imagen */
+    overflow: hidden; /* Oculta el desbordamiento de la imagen */
+    transition: 0.5s; /* Transición suave para los cambios de estilo */
+}
+
+/* Estilo de la imagen cuando se pasa el ratón sobre la tarjeta */
+#container .card:hover .img8x {
+    top: -100px; /* Mueve la imagen hacia arriba */
+    scale: 0.75; /* Reduce el tamaño de la imagen */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+}
+
+/* Estilos para la imagen dentro de la tarjeta */
+#container .card .img8x img {
+    position: absolute; /* Posiciona la imagen en la misma posición que su contenedor */
+    top: 0; /* Alinea la imagen al borde superior */
+    left: 0; /* Alinea la imagen al borde izquierdo */
+    width: 100%; /* Asegura que la imagen cubra todo el contenedor */
+    height: 100%; /* Asegura que la imagen cubra todo el contenedor */
+    object-fit: cover; /* Mantiene la proporción de la imagen y la recorta si es necesario */
+}
+
+/* Estilos para el contenido de la tarjeta */
+#container .card .content {
+    position: absolute; /* Posiciona el contenido en la tarjeta */
+    top: 252px; /* Posiciona el contenido desde el borde superior */
+    width: 100%; /* Ancho completo del contenedor de la tarjeta */
+    padding: 0 30px; /* Espacio a los lados del contenido */
+    height: 35px; /* Altura fija del contenido */
+    overflow: hidden; /* Oculta el desbordamiento del contenido */
+    text-align: center; /* Centra el texto */
+    transition: 0.5s; /* Transición suave para los cambios de estilo */
+}
+
+/* Estilo del contenido cuando se pasa el ratón sobre la tarjeta */
+#container .card:hover .content {
+    top: 130px; /* Mueve el contenido hacia arriba */
+    height: 250px; /* Aumenta la altura del contenido */
+}
+
+/* Estilo del título dentro del contenido cuando se pasa el ratón sobre la tarjeta */
+#container .card:hover .content h3 {
+    font-size: 1.5em; /* Aumenta el tamaño de la fuente */
+    font-weight: 700; /* Hace el texto más negrita */
+    color: var(--clr); /* Cambia el color del texto al valor de la variable --clr */
+}
+
+/* Estilo del párrafo dentro del contenido cuando se pasa el ratón sobre la tarjeta */
+#container .card:hover .content p {
+    color: black; /* Cambia el color del texto a negro */
+}
+
+/* Estilos específicos para dispositivos móviles (ancho máximo de 576px) */
+@media (max-width: 576px) {
+    #container {
+        flex-direction: column; /* Organiza las tarjetas en columna */
+        gap: 40px; /* Aumenta el espacio entre tarjetas en móviles */
+    }
+    #container .card {
+        width: 100%; /* Ancho completo del contenedor */
+        max-width: 100%; /* Ancho máximo del contenedor */
+        margin-bottom: 40px; /* Aumenta el margen inferior entre tarjetas */
+    }
+    #container .card:hover {
+        height: 350px; /* Ajusta la altura de la tarjeta al pasar el ratón en móviles */
+    }
+}
+
+/* Estilos específicos para tablets (ancho entre 577px y 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    #container {
+        flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en múltiples filas */
+        gap: 30px; /* Espacio entre tarjetas */
+    }
+    #container .card {
+        width: 45%; /* Ancho de las tarjetas para mostrar dos por fila */
+    }
+}
+
+/* Estilos específicos para computadoras (ancho mínimo de 769px) */
+@media (min-width: 769px) {
+    #container {
+        flex-wrap: nowrap; /* Mantiene las tarjetas en una sola fila */
+        gap: 50px; /* Espacio entre tarjetas */
+    }
+    #container .card {
+        max-width: 350px; /* Ancho máximo de las tarjetas */
+    }
+}
+
+
+
+
+
+
+
+
+
+
