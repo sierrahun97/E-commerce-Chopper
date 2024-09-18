@@ -2,6 +2,7 @@
 footer {
     background-color: rgb(247, 244, 244);
     padding: 10px 45px;
+    font-family: "Poppins", sans-serif;
 }
 
 .botonFooter {
@@ -23,13 +24,14 @@ footer img {
 
 /* ----- estilos sobre slogan ----- */
 .slogan-text {
+    font-family: "Poppins", sans-serif;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 40px;
 }
 
 .slogan-text h1 {
-    /* font-size: 3rem; */
+    font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: 800;
 }
@@ -58,6 +60,11 @@ footer img {
     /* font-size: 2.5rem; */
     margin-bottom: 20px;
     font-weight: 800;
+    font-family: "Poppins", sans-serif;
+}
+
+.about-text p {
+    font-family: "Jost", sans-serif;
 }
 
 .separator-nav {
