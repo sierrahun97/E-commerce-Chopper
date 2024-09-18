@@ -1,4 +1,7 @@
 /* ----- estilos footer ----- */
+body {
+    font-family: "Poppins";
+}
 footer {
     background-color: rgb(247, 244, 244);
     padding: 10px 45px;
@@ -79,7 +82,6 @@ footer img {
     max-height: 8px;
     margin: 0;
     padding: 0;
-    background-color: rgb(247, 244, 244);
 }
 
 #azul {
