@@ -25,6 +25,12 @@ footer img {
     margin-bottom: 20px;
 }
 
+footer form input {
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+}
+
 /* ----- estilos sobre slogan ----- */
 .slogan-text {
     font-family: "Poppins", sans-serif;

@@ -1,13 +1,13 @@
 .contact {
     width: 100%;
-    padding: 50px;
+    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .contact img {
-    width: 35vw;
+    width: 38vw;
     border-radius: 10px;
 }
 
@@ -27,6 +27,7 @@
 }
 .form-title h2 {
     font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .inputs-row {

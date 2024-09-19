@@ -16,14 +16,15 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="contact.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
-        <div class="container-fluid justify-content-center">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="images/Logo_Chopper.png" alt="Logo_Chopper" width="100">
             </a>
@@ -37,22 +38,23 @@
                         <a class="nav-link" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Sobre Nosotros</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-white"
-                            style="background-color: #955EB7; color: white !important;" href="#">Contáctenos</a>
+                        <a class="nav-link active" aria-current="page" href="aboutus.html">Sobre Nosotros</a>
                     </li>
-                </ul>
-                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link btn btn-primary text-white"
+                        style="background-color: #955EB7; color: white !important;"
+                        href="contact.html">Contáctenos</a>
                     </li>
                 </ul>
             </div>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+            </ul>
         </div>
     </nav>
     <div class="separator-nav">
@@ -64,50 +66,58 @@
             <p>En Chopper, creemos que cada mordisco, ronroneo y salto de alegría merece el mejor cuidado y cariño.</p>
         </section>
         <section class="contact">
-            <img src="img/cat-us.png" alt="about-us">
+            <img src="img/vet-form.png" alt="about-us">
             <div class="form-title">
                 <h2>Contacta a un veterinario aliado</h2>
-                <div>
-                    <form action=" " method="post">
-                        <div class="inputs-row">
-                            <div class="form-group">
-                                <label for="name">Nombre</label>
-                                <input type="text" id="name" name="name" placeholder="Nombre aqui" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Email aqui" required>
-                            </div>
+                <form action=" " method="post">
+                    <div class="inputs-row">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" placeholder="Nombre aquí" required>
                         </div>
-                        <label for="message">Detalles</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Escriba su mensaje aqui!"
-                            required></textarea>
-                        <button class="btn-form" type="submit">Enviar</button>
-                </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email aquí" required>
+                        </div>
+                    </div>
+                    <label for="message">Detalles</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Escriba su mensaje aquí"
+                        required></textarea>
+                    <button class="btn-form" type="submit">Enviar</button>
+                </form>
             </div>
         </section>
         <section class="contact">
-            <img src="img/cat-us.png" alt="about-us">
             <div class="form-title">
-                <h2>Contacta a un veterinario aliado</h2>
-                <div>
-                    <form action=" " method="post">
-                        <div class="inputs-row">
-                            <div class="form-group">
-                                <label for="name">Nombre</label>
-                                <input type="text" id="name" name="name" placeholder="Nombre aqui" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Email aqui" required>
-                            </div>
+                <h2>Contáctanos</h2>
+                <form action=" " method="post">
+                    <div class="inputs-row">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" placeholder="Nombre aquí" required>
                         </div>
-                        <label for="message">Detalles</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Escriba su mensaje aqui!"
-                            required></textarea>
-                        <button class="btn-form" type="submit">Enviar</button>
-                </div>
+                        <div class="form-group">
+                            <label for="lastname">Apellido</label>
+                            <input type="lastname" id="lastname" name="lastname" placeholder="Apellido aquí" required>
+                        </div>
+                    </div>
+                    <div class="inputs-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Email aquí" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="phone" id="phone" name="phone" placeholder="Teléfono aquí" required>
+                        </div>
+                    </div>
+                    <label for="message">Detalles</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Escriba su mensaje aqui"
+                        required></textarea>
+                    <button class="btn-form" type="submit">Enviar</button>
+                </form>
             </div>
+            <img src="img/contact-form.png" alt="about-us">
         </section>
 
 
