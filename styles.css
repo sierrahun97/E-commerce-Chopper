@@ -1,4 +1,7 @@
 /* ----- estilos footer ----- */
+body {
+    font-family: "Poppins";
+}
 footer {
     background-color: rgb(247, 244, 244);
     padding: 10px 45px;
@@ -20,6 +23,12 @@ footer {
 footer img {
     width: 150px;
     margin-bottom: 20px;
+}
+
+footer form input {
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
 }
 
 /* ----- estilos sobre slogan ----- */
