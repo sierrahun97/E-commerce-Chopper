@@ -33,8 +33,7 @@ body {
     background: #fff; /* Fondo blanco */
     border-radius: 20px; /* Bordes redondeados */
     margin-top: 4%; /* Margen superior */
-    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15); /* Sombra para darle profundidad */
-    transition: 0.5s; /* Transición suave para los cambios de estilo */
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);   transition: 0.5s; /* Transición suave para los cambios de estilo */
 }
 
 /* Estilo de la tarjeta cuando se pasa el ratón sobre ella */
