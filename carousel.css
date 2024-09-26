@@ -9,7 +9,7 @@
 
 /* Estilo para el carrusel */
 .carousel-inner {
-    height: 400px; /* Ajusta la altura del carrusel (puedes cambiar este valor) */
+    height: 100%; /* Ajusta la altura del carrusel (puedes cambiar este valor) */
 }
 
 /* Estilo para las imágenes del carrusel */
