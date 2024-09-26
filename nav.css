@@ -36,4 +36,21 @@ a {
 
 .navbar-nav .nav-item {
     margin: 0 15px;
+    align-self: center;
+}
+
+.btn-custom:hover {
+    background-color: #0EB1D2 !important;
+    border-color: #0EB1D2 !important;
+    color: white !important; /* Opcional para cambiar el color del texto */
+  }
+  .btn-custom {
+    border-color: #0EB1D2 !important;
+    color: #0EB1D2 !important; /* Opcional para cambiar el color del texto */
+  }
+.navbar-nav .ms-auto{
+align-items: center !important;
+}
+.navbar-nav .nav-item span {
+    margin-top: 10px;
 }
