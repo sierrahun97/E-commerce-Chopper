@@ -1,10 +1,11 @@
 /* ----- estilos footer ----- */
 body {
+    width: 100%;
     font-family: "Poppins";
 }
 footer {
+    margin-top: 3vh;
     background-color: rgb(247, 244, 244);
-    padding: 10px 45px;
     font-family: "Poppins", sans-serif;
 }
 
