@@ -45,8 +45,8 @@ body {
 #container .card .img8x {
     position: absolute; /* Posicionamiento absoluto para superponer la imagen */
     top: 20px; /* Posiciona la imagen desde el borde superior */
-    width: 250px; /* Ancho fijo de la imagen */
-    height: 220px; /* Altura fija de la imagen */
+    width: 220px; /* Ancho fijo de la imagen */
+    height: 200px; /* Altura fija de la imagen */
     background: #333; /* Fondo gris oscuro en caso de que la imagen no cargue */
     border-radius: 12px; /* Bordes redondeados para la imagen */
     overflow: hidden; /* Oculta el desbordamiento de la imagen */
@@ -101,10 +101,11 @@ body {
 }
 
 /* Estilos específicos para dispositivos móviles (ancho máximo de 576px) */
-@media (max-width: 576px) {
+@media (max-width: 550px) {
     #container {
         flex-direction: column; /* Organiza las tarjetas en columna */
-        gap: 40px; /* Aumenta el espacio entre tarjetas en móviles */
+        gap: 40px;
+        font-size: 15px; /* Aumenta el espacio entre tarjetas en móviles */
     }
     #container .card {
         width: 100%; /* Ancho completo del contenedor */
@@ -117,10 +118,11 @@ body {
 }
 
 /* Estilos específicos para tablets (ancho entre 577px y 768px) */
-@media (min-width: 577px) and (max-width: 768px) {
+@media (min-width: 551px) and (max-width: 1264px) {
     #container {
         flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en múltiples filas */
-        gap: 30px; /* Espacio entre tarjetas */
+        gap: 30px;
+        font-size: 18px; /* Espacio entre tarjetas */
     }
     #container .card {
         width: 45%; /* Ancho de las tarjetas para mostrar dos por fila */
@@ -128,13 +130,13 @@ body {
 }
 
 /* Estilos específicos para computadoras (ancho mínimo de 769px) */
-@media (min-width: 769px) {
+@media (min-width: 1264px) {
     #container {
         flex-wrap: nowrap; /* Mantiene las tarjetas en una sola fila */
         gap: 50px; /* Espacio entre tarjetas */
     }
     #container .card {
-        max-width: 350px; /* Ancho máximo de las tarjetas */
+        max-width: 340px; /* Ancho máximo de las tarjetas */
     }
 }
 
