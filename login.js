@@ -1,11 +1,11 @@
-const wrapper = document.querySelector('.wrapper')
-const registerLink = document.querySelector('.register-link')
-const loginLink = document.querySelector('.login-link')
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".container");
 
-registerLink.onclick = () => {
-    wrapper.classList.add('active')
-}
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
+});
 
-loginLink.onclick = () => {
-    wrapper.classList.remove('active')
-}
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
+});
