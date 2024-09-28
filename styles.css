@@ -40,7 +40,7 @@ footer form input {
 }
 
 .slogan-text h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     font-weight: 800;
 }
@@ -128,4 +128,64 @@ footer form input {
     display: inline-block;
     background-color: #955EB7;
     color: #955EB7;
+}
+
+@media (max-width: 834px) {
+    .slogan-text {
+        padding: 0 50px;
+    }
+
+    /* .slogan-text h1{
+        font-size: 2rem;
+    }
+
+    .slogan-text p {
+        font-size: .8rem;
+    } */
+
+    .about-us {
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .about-us img{
+        max-width: 65vw;
+        margin-bottom: 50px;
+    }
+
+    .about-text {
+        width: 65vw;
+    }
+}
+
+@media (max-width: 390px) {
+    .slogan-text h1{
+        font-size: 1.5rem;
+    }
+
+    .slogan-text p{
+        font-size: 0.9rem;
+    }
+
+    .about-us img{
+        max-width: 85vw;
+        margin-bottom: 50px;
+    }
+
+    .about-us {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        width: 85vw;
+    }
+
+    .about-text h2 {
+        font-size: 1.2rem;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+    }
 }
