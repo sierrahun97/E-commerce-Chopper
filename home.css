@@ -1,0 +1,278 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: "Poppins";
+}
+
+.product {
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-category {
+    padding: 0 10px;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.product-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.product-card {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 53vh;
+    margin-right: 5vh;
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que el contenido se desborde */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.3s ease; /* Efecto de transformación */
+    padding: 20px; /* Padding interno */
+}
+
+
+.product-card:hover {
+    transform: scale(1.05); /* Escala al pasar el mouse */
+}
+
+.product-image {
+    width: 100%;
+    height: 30vh; /* Ajusta la altura para que la imagen sea más pequeña */
+    overflow: hidden;
+    margin-bottom: 6px; /* Espacio entre la imagen y el contenido */
+}
+
+.product-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.discount-tag {
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ff7d7d;
+    right: 10px;
+    top: 10px;
+  
+}
+
+.card-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px; /* Ajusta el padding para hacerlo más pequeño */
+    width: auto; /* Cambia de 90% a auto */
+    border: none;
+    outline: none;
+    background: #ff7d7d; /* Fondo del botón */
+    border-radius: 5px;
+    color: #fff; /* Color del texto */
+    cursor: pointer;
+    font-size: 14px; /* Ajusta el tamaño de fuente */
+}
+
+.card-btn:hover {
+    background: #ff4d4d; /* Color al pasar el mouse */
+}
+
+
+.product-info {
+    width: 100%;
+    padding-top: 10px; /* Espacio entre la imagen y la información */
+}
+
+.product-brand {
+    font-size: 20px;
+
+}
+
+.product-short-description {
+    width: 100%;
+    line-height: 1.5; /* Espaciado mejorado */
+    overflow: hidden;
+    opacity: 0.7; /* Más sutil */
+    margin: 5px 0;
+}
+
+.price {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.actual-price {
+    margin-left: 20px;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+/* Botones de navegación */
+.pre-btn,
+.nxt-btn {
+    position: absolute;
+    border: none;
+    top: 50%;
+  transform: translateY(-50%);
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ff7d7d;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.pre-btn img,
+.nxt-btn img {
+    opacity: 0.2;
+}
+
+.prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+    opacity: 1;
+}
+
+.collection-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.collection {
+    position: relative;
+}
+
+.collection img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.collection p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    text-transform: capitalize;
+}
+
+.collection:nth-child(3) {
+    grid-column: span 2;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide {
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #333;
+    height: 200px;
+    flex: 1 0 calc(100% / 4 - 10px); /* Por defecto: 4 tarjetas visibles */
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-btn {
+    border: none;
+    cursor: none;
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff7d7d;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  button {
+    background-color: transparent;
+  }
+  
+  .carousel-btn-prev {
+    left: 10px;
+  }
+  
+  .carousel-btn-next {
+    right: 10px;
+  }
+
+
+
+  @media (max-width: 639px) {
+    .carousel-slide {
+      flex: 1 0 calc(100% / 1 - 10px); /* Mostrar 1 tarjeta */
+    }
+  }
+  
+  /* Responsive: dos tarjetas en pantallas de 640px a 767px */
+  @media (min-width: 640px) and (max-width: 767px) {
+    .carousel-slide {
+      flex: 1 0 calc(100% / 2 - 10px); /* Mostrar 2 tarjetas */
+    }
+  }
+  
+  /* Responsive: tres tarjetas en pantallas de 768px a 1023px */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .carousel-slide {
+      flex: 1 0 calc(100% / 3 - 10px); /* Mostrar 3 tarjetas */
+    }
+  }
+  
+  /* A partir de 1024px, mostrar 4 tarjetas */
+  @media (min-width: 1024px) {
+    .carousel-slide {
+      flex: 1 0 calc(100% / 4 - 10px); /* Mostrar 4 tarjetas */
+    }
+  }

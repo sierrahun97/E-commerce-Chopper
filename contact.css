@@ -73,3 +73,36 @@ textarea {
     color: #955EB7;
     border: 2px solid #955EB7;
 }
+
+/*///////////// Responsive //////////////*/
+
+@media (max-width: 834px) {
+    .contact {
+        flex-direction: column;
+        gap: 3vw; 
+    }
+    #form2{
+        flex-direction: column-reverse;
+    }
+    .form-title {
+        width: 80vw;
+    }
+    .contact form {
+        width: 100%;
+    }
+    .contact img {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 390px) {
+    .contact img {
+        width: 100%;
+    }
+   .inputs-row{
+        flex-direction: column;
+   }
+   .form-group {
+        width: 100%;
+    }
+}
