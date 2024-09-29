@@ -3,5 +3,174 @@
     align-items: center;
     justify-content: center;
     padding: 20px 45px;
-    background-color: aqua;
+}
+
+.card-carousel-container {
+    width: 90%;
+    height: 386px;
+    overflow: hidden;
+    margin: 20px auto;
+    position: relative;
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 50px; /* Espacio entre tarjetas */
+}
+
+.card-product-subscription{
+    display: flex; /* Usa Flexbox para alinear el contenido de la tarjeta */
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: space-between;
+    align-items: center;
+    text-align: center; 
+    padding: 27px 45px;
+    width: 293px;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid #ddd; /* Borde alrededor de la tarjeta */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-product-image img{
+    width: 100%; /* La imagen ocupa todo el ancho disponible */
+    height: auto;
+    object-fit: cover; /* Mantiene el aspecto de la imagen */
+    border-radius: 8px;
+}
+
+.card-product-info {
+    width: 100%;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+.card-product-info h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.card-product-info p {
+    font-size: 0.8rem;
+}
+
+.card-product-price {
+    font-size: 1rem !important; 
+    font-weight: 600;
+    color: red;
+}
+
+/* Boton añadir */
+.add-cart{
+    width: 160px;
+    background-color: #955EB7;
+    color: white;
+    border: none;
+    border-color: #955EB7;
+    border-radius: 60px;
+    font-size: 1rem;
+}
+
+.add-cart:hover {
+    background-color: white;
+    color: #955EB7;
+    border: solid 1px #955EB7;
+}
+
+/* Botones de control del carrusel*/
+.card-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.card-carousel-btn.left {
+    left: 0;
+}
+
+.card-carousel-btn.right {
+    right: 0;
+}
+
+/*----- Responsive -----*/
+
+@media (max-width: 834px) {
+    .card-carousel-container {
+        width: 95%;
+        height: 290px;
+    }
+
+    .card-container {
+        height: 100%;
+        gap: 30px;
+    }
+
+    .card-product-subscription {
+        width: 187px;
+        padding: 17px 29px;
+        flex: 1 0 auto;
+    }
+    
+    .card-product-info h3 {
+        font-size: 1rem;
+        margin: 0px;
+    }
+
+    .card-product-info p {
+        font-size: 0.7rem;
+        margin: 0px;
+    }
+    
+    .add-cart{
+        width: 100%;
+    }
+
+    .card-carousel-btn {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 390px) {
+    .card-carousel-container {
+        height: 263px;
+        width: 100%;
+    }
+
+    .card-container {
+        gap: 10px;
+    }
+
+    .card-product-subscription {
+        width: 169px;
+        padding: 10px 20px;
+    }
+
+    .card-product-info h3 {
+        font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    }
+
+    .card-product-price {
+        font-size: 0.8rem !important; /* Reducir aún más el tamaño de fuente */
+    }
+
+    .add-cart {
+        width: 100%; /* Botón ocupa todo el ancho */
+        font-size: 0.9rem; /* Ajuste del tamaño de fuente en el botón */
+    }
+
+    /* Ajuste de botones del carrusel */
+    .card-carousel-btn {
+        padding: 6px; /* Botones más pequeños en pantallas pequeñas */
+    }
 }
