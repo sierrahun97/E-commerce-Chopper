@@ -16,8 +16,9 @@ class ItemsController {
         this.items.push(product);
     }
 }
+const itemsController = new ItemsController();
 
-module.exports = ItemsController
+module.exports = {itemsController}
 
         // const product= {
         // id :this.currentId++,
