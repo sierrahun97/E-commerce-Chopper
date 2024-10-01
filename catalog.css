@@ -1,3 +1,4 @@
+/* ----- Cards de productos VIP ----- */
 .card-subscription {
     width: 100vw;
     align-items: center;
@@ -176,10 +177,7 @@
 }
 
 
-
-
-
-
+/* ----- Catalogo ----- */
 .sections-titles {
     width: 100vw;
     margin-top: 40px;

@@ -16,20 +16,4 @@ class ItemsController {
         this.items.push(product);
     }
 }
-const itemsController = new ItemsController();
-
-module.exports = {itemsController}
-
-        // const product= {
-        // id :this.currentId++,
-        // name : name, 
-        // description : description, 
-        // price : price, 
-        // url , 
-        // category
-        // }
-        // // Se instancia el objeto de la clase producto
-
-        // const newProduct = new Product(this.currentId, name, description, price, url, category)
-        // this.items.push(newProduct);
-        // console.log(this.items)
+export const itemsController = new ItemsController();
