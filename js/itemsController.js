@@ -1,7 +1,8 @@
 class ItemsController {
-    constructor(currentId = 0) {
+    constructor(currentId = 0 ) {
+        const storedId = localStorage.getItem('currentId');
+        this.currentId = storedId ? parseInt(storedId) : currentId;
         this.items = [];
-        this.currentId = currentId;
     }
 
     addItem(name, price, url,description, category) {
@@ -14,6 +15,8 @@ class ItemsController {
             category: category,
         }
         this.items.push(product);
+
+        localStorage.setItem('currentId', this.currentId);
     }
 }
 export const itemsController = new ItemsController();

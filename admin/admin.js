@@ -1,4 +1,4 @@
-import { itemsController } from './js/itemsController.js';
+import { itemsController } from '../js/itemsController.js';
 
 function showProducts() {
     const productsSection = document.querySelector(".catalog-products");
@@ -66,7 +66,7 @@ document.getElementById('productForm').addEventListener('submit', function(event
         sendProducts();
     }
 
-    
+    itemsController.currentId()
 });
 
 
