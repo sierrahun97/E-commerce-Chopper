@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <!-- coding by @_.codedevotee -->
 
 <head>
@@ -12,7 +12,7 @@
     rel='stylesheet'>
 
     <!--Custom CSS-->
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="./login.css">
 
 </head>
 
@@ -30,7 +30,7 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Contrasena" />
               </div>
-              <input type="submit" value="Inicia sesion" class="btn solid" />
+              <input id="btn-login" type="submit" value="Inicia sesion" class="btn solid" />
               <p class="social-text">O Iniciar sesión con plataformas sociales</p>
               <div class="social-media">
                 <a href="#" class="social-icon">
@@ -51,17 +51,21 @@
               <h2 class="title">Registrate</h2>
               <div class="input-field">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Usuario" />
+                <input id="user-name" name="user-name"  type="text" placeholder="Nombre completo" />
+              </div>
+              <div class="input-field">
+                <i class='bx bxs-phone' style=" font-size: 25px;"></i>
+                <input id="user-phone" name="user-phone" type="text" placeholder="Teléfono" />
               </div>
               <div class="input-field">
                 <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Correo electronico" />
+                <input id="user-email" name="user-email" type="email" placeholder="Correo electrónico" />
               </div>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Contrasena" />
+                <input id="user-password" name="user-password" type="password" placeholder="Contraseña" />
               </div>
-              <input type="submit" class="btn" value="Registrarme" />
+              <input id="btn-register" type="submit" class="btn" value="Registrarme" />
               <p class="social-text">O Regístrate con plataformas sociales</p>
               <div class="social-media">
                 <a href="#" class="social-icon">
@@ -92,7 +96,6 @@
                 Registrate
               </button>
             </div>
-            <img src="./images/dog-register.svg" class="image" alt="" />
           </div>
           <div class="panel right-panel">
             <div class="content">
@@ -104,11 +107,11 @@
                 Inicia sesion
               </button>
             </div>
-            <img src="./images/dog-login.svg" class="image" alt="" />
           </div>
         </div>
       </div>
-    <script src="login.js"></script>
+    <script type="module" src="login.js"></script>
+    <script type="module" src="userController.js"></script>
     <script src="https://kit.fontawesome.com/16785a0a7f.js" crossorigin="anonymous"></script>
 </body>
 
