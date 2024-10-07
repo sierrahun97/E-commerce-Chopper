@@ -13,13 +13,26 @@ class UsersController{
             userEmail : userEmail,
             userPassword : userPassword
         }
-        this.users.push(user);
 
-        localStorage.setItem('currentUserId', this.currentUserId);
+        if (localStorage.getItem("registeredUsers")) {
+            
+            let registeredUsers = JSON.parse(localStorage.getItem("registeredUsers"));
+    
+            this.users = registeredUsers.slice();
+    
+            this.users.push(user);
+    
+            localStorage.setItem('currentUserId', this.currentUserId);
+    
+            localStorage.setItem('registeredUsers', JSON.stringify(this.users));
+        } else {
+            this.users.push(user);
+    
+            localStorage.setItem('currentUserId', this.currentUserId);
+    
+            localStorage.setItem('registeredUsers', JSON.stringify(this.users));
+        }
 
-        
-
-        localStorage.setItem('registeredUsers', JSON.stringify(this.users));
     }
 }
 
