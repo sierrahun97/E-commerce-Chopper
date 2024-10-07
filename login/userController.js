@@ -1,5 +1,5 @@
-class UsersController {
-    constructor(currentUserId = 0) {
+class UsersController{
+    constructor (currentUserId = 0){
         const storedUserId = localStorage.getItem('currentUserId');
         this.currentUserId = storedUserId ? parseInt(storedUserId) : currentUserId; 
         this.users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
@@ -22,3 +22,9 @@ class UsersController {
 
 // Exportar una instancia de UsersController
 export const userController = new UsersController();
+
+
+
+
+
+
