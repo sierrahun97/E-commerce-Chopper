@@ -3,6 +3,7 @@ class UsersController{
         const storedUserId = localStorage.getItem('currentUserId');
         this.currentUserId = storedUserId ? parseInt(storedUserId) : currentUserId; 
         this.users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+
     }
 
     addUser(userName, userEmail, userPhone, userPassword) {
@@ -12,11 +13,15 @@ class UsersController{
             userEmail: userEmail,
             userPhone: userPhone,
             userPassword: userPassword,
+            userRole: "CUSTOMER_USER"
         };
+
+        if (user.userEmail == "admin@chopper.admin.com") user.userRole = "ADMIN";
         this.users.push(user);
 
         localStorage.setItem('currentUserId', this.currentUserId);
         localStorage.setItem('registeredUsers', JSON.stringify(this.users));
+        return user;
     }
 }
 

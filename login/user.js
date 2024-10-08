@@ -36,13 +36,8 @@ btnRegister.addEventListener('click', function (event) {
         }
 
         // Crea el nuevo usuario
-        const newUser = {
-            userName,
-            userEmail,
-            userPhone,
-            userPassword
-        };
-
+        const newUser = userController.addUser(userName, userEmail, userPhone, userPassword)
+        
         // Agrega el nuevo usuario y guarda en localStorage
         users.push(newUser);
         saveUsersToLocalStorage(users);
@@ -63,7 +58,7 @@ btnLogin.addEventListener('click', function (event) {
 
     if (user) {
         localStorage.setItem('loggedInUser', JSON.stringify(user));
-        window.location.href = '../home.html';  // Asegúrate de que la ruta sea correcta
+        window.location.href = '../home.html';  
     } else {
         alert('Correo o contraseña incorrectos.');
     }
