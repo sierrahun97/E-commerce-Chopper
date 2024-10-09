@@ -6,24 +6,29 @@ class UsersController {
 
     }
 
-    
+    encodePassword(userPassword) {
+        let encodedPassword = '';
+        const shift = 3; // Número que defines para cambiar la posición de cada carácter (puede ser cualquier valor)
+
+        for (let i = 0; i < userPassword.length; i++) {
+            const charCode = userPassword.charCodeAt(i); // Obtener el código ASCII del carácter
+            const newCharCode = charCode + shift; // Cambiar la posición sumando un valor al código ASCII
+            encodedPassword += String.fromCharCode(newCharCode); // Convertir el nuevo código ASCII de vuelta a carácter
+        }
+
+        return encodedPassword;
+    }
     addUser(userName, userEmail, userPhone, userPassword) {
+        const encodedPassword = this.encodePassword(userPassword);
         const user = {
             id: this.currentUserId++,
             userName: userName,
             userEmail: userEmail,
             userPhone: userPhone,
-            userPassword: userPassword,
+            userPassword: encodedPassword,
             userRole: "CUSTOMER_USER"
         };
-        async function hashPassword(userPassword) {
-            const encoder = new TextEncoder(); // Codificar la contraseña como bytes
-            const data = encoder.encode(userPassword); // Convertir a formato de bytes
-            const hashBuffer = await crypto.subtle.digest('SHA-256', data); // Crear el hash
-            const hashArray = Array.from(new Uint8Array(hashBuffer)); // Convertir el hash a una matriz de bytes
-            const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join(''); // Convertir a hexadecimal
-            return hashHex;
-        }
+        
         if (user.userEmail == "admin@chopper.admin.com") user.userRole = "ADMIN";
         this.users.push(user);
 
