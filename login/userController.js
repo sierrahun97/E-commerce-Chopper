@@ -6,22 +6,32 @@ class UsersController {
     }
 
     addUser(userName, userEmail, userPhone, userPassword) {
-        const user = {
-            id: this.currentUserId++,
-            userName: userName,
-            userEmail: userEmail,
-            userPhone: userPhone,
-            userPassword: userPassword,
-        };
-        this.users.push(user);
+        // Encriptar la contraseña antes de guardar
+        bcrypt.hash(userPassword, 10, (err, hash) => {
+            if (err) {
+                console.error('Error en la encriptación:', err);
+                return;
+            }
 
-        localStorage.setItem('currentUserId', this.currentUserId);
-        localStorage.setItem('registeredUsers', JSON.stringify(this.users));
+            const user = {
+                id: this.currentUserId++,
+                userName: userName,
+                userEmail: userEmail,
+                userPhone: userPhone,
+                userPassword: hash, // Guardamos la contraseña encriptada
+            };
+            this.users.push(user);
+
+            localStorage.setItem('currentUserId', this.currentUserId);
+            localStorage.setItem('registeredUsers', JSON.stringify(this.users));
+            console.log('Usuario registrado:', user);
+        });
     }
 }
 
 // Exportar una instancia de UsersController
 export const userController = new UsersController();
+
 
 
 
