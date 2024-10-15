@@ -25,3 +25,14 @@ prevButton.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', updateCarouselPosition);
+
+document.addEventListener('DOMContentLoaded', function (){
+  const adminClass = document.querySelector('.admin')
+  if (localStorage.getItem("loggedInUser")){
+    const userLog = JSON.parse(localStorage.getItem("loggedInUser"));
+    const role = userLog.userRole;
+    if (role == 'CUSTOMER_USER'){
+      adminClass.style.display = 'none'
+    }
+  }
+})

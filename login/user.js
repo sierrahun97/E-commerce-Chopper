@@ -26,9 +26,9 @@ btnRegister.addEventListener('click', function (event) {
     if (!userName || !userEmail || !userPhone || !userPassword) {
         alert('Por favor, completa todos los campos.');
         return;
-    }
+    }else {
+        const users = getUsersFromLocalStorage();
 
-    const users = getUsersFromLocalStorage();
 
     // Verifica si el usuario ya existe
     const userExists = users.find(u => u.userEmail === userEmail);
@@ -37,48 +37,16 @@ btnRegister.addEventListener('click', function (event) {
         return;
     }
 
-    // Encriptar la contraseña
-    const hashedPassword = bcrypt.hashSync(userPassword, 10); // Encriptar con un "salt" de 10
+        // Crea el nuevo usuario
+        const newUser = userController.addUser(userName, userEmail, userPhone, userPassword)
+        
+        // Agrega el nuevo usuario y guarda en localStorage
+        users.push(newUser);
+        saveUsersToLocalStorage(users);
 
-    // Crea el nuevo usuario con la contraseña encriptada
-    const newUser = {
-        userName,
-        userEmail,
-        userPhone,
-        userPassword: hashedPassword // Guardar la contraseña encriptada
-    };
-
-    // Agrega el nuevo usuario y guarda en localStorage
-    users.push(newUser);
-    saveUsersToLocalStorage(users);
-
-    alert('¡Usuario registrado correctamente!');
-});
-
-// Inicio de sesión
-btnLogin.addEventListener('click', function (event) {
-    event.preventDefault();
-
-    const email = document.querySelector('#login-email').value;
-    const password = document.querySelector('#login-password').value;
-
-    const users = getUsersFromLocalStorage();
-    const user = users.find(u => u.userEmail === email);
-
-    if (user) {
-        // Comparar la contraseña ingresada con la contraseña encriptada
-        const isMatch = bcrypt.compareSync(password, user.userPassword);
-        if (isMatch) {
-            localStorage.setItem('loggedInUser', JSON.stringify(user));
-            window.location.href = '../home.html';  // Asegúrate de que la ruta sea correcta
-        } else {
-            alert('Correo o contraseña incorrectos.');
-        }
-    } else {
-        alert('Correo o contraseña incorrectos.');
+        alert('¡Usuario registrado correctamente!');
     }
 });
-
 
 // Inicio de sesión
 btnLogin.addEventListener('click', function (event) {
@@ -92,7 +60,7 @@ btnLogin.addEventListener('click', function (event) {
 
     if (user) {
         localStorage.setItem('loggedInUser', JSON.stringify(user));
-        window.location.href = '../home.html';  // Asegúrate de que la ruta sea correcta
+        window.location.href = '../home.html';  
     } else {
         alert('Correo o contraseña incorrectos.');
     }
