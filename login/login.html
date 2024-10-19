@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- coding by @_.codedevotee -->
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Register form</title>
 
-    <!--Boxicons CDN-->
+   
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' 
     rel='stylesheet'>
 
-    <!--Custom CSS-->
+
     <link rel="stylesheet" href="./login.css">
 
 </head>
@@ -28,24 +28,10 @@
               </div>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input id="login-password" type="password" placeholder="Contrasena" />
+                <input id="login-password" type="password" placeholder="Contraseña" />
               </div>
               <input id="btn-login" type="submit" value="Inicia sesion" class="btn solid" />
-              <p class="social-text">O Iniciar sesión con plataformas sociales</p>
-              <div class="social-media">
-                <a href="#" class="social-icon">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-icon">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="social-icon">
-                  <i class="fab fa-google"></i>
-                </a>
-                <a href="#" class="social-icon">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </div>
+              <p class="social-text">Volver al <a href="../pages/home.html"><strong>inicio</strong></a></p>
             </form>
             <form action="#" class="sign-up-form">
               <h2 class="title">Registrate</h2>
@@ -66,21 +52,7 @@
                 <input id="user-password" name="user-password" type="password" placeholder="Contraseña" />
               </div>
               <input id="btn-register" type="submit" class="btn" value="Registrarme" />
-              <p class="social-text">O Regístrate con plataformas sociales</p>
-              <div class="social-media">
-                <a href="#" class="social-icon">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-icon">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="social-icon">
-                  <i class="fab fa-google"></i>
-                </a>
-                <a href="#" class="social-icon">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </div>
+              <p class="social-text">Volver al <a href="../pages/home.html"><strong>inicio</strong></a></p>
             </form>
           </div>
         </div>
@@ -114,6 +86,8 @@
     <script src="login.js"></script>
     <script type="module" src="user.js"></script> 
     <script src="https://kit.fontawesome.com/16785a0a7f.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcrypt.js/2.4.3/bcrypt.min.js"></script>
+
 </body>
 
 </html> 

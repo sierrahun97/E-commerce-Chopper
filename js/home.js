@@ -1,7 +1,7 @@
 
 const track = document.querySelector('.carousel-track');
-const prevButton = document.querySelector('.carousel-btn-prev');
-const nextButton = document.querySelector('.carousel-btn-next');
+// const prevButton = document.querySelector('.carousel-btn-prev');
+// const nextButton = document.querySelector('.carousel-btn-next');
 let currentSlide = 0;
 
 function updateCarouselPosition() {
@@ -9,20 +9,20 @@ function updateCarouselPosition() {
   track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
 }
 
-nextButton.addEventListener('click', () => {
-  const totalSlides = document.querySelectorAll('.carousel-slide').length;
-  if (currentSlide < totalSlides - 1) {
-    currentSlide++;
-    updateCarouselPosition();
-  }
-});
+// nextButton.addEventListener('click', () => {
+//   const totalSlides = document.querySelectorAll('.carousel-slide').length;
+//   if (currentSlide < totalSlides - 1) {
+//     currentSlide++;
+//     updateCarouselPosition();
+//   }
+// });
 
-prevButton.addEventListener('click', () => {
-  if (currentSlide > 0) {
-    currentSlide--;
-    updateCarouselPosition();
-  }
-});
+// prevButton.addEventListener('click', () => {
+//   if (currentSlide > 0) {
+//     currentSlide--;
+//     updateCarouselPosition();
+//   }
+// });
 
 window.addEventListener('resize', updateCarouselPosition);
 
@@ -36,3 +36,4 @@ document.addEventListener('DOMContentLoaded', function (){
     }
   }
 })
+console.log("Esto funciona");

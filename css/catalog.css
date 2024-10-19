@@ -1,9 +1,10 @@
-/* ----- Cards de productos VIP ----- */
+
 .card-subscription {
     width: 100vw;
     align-items: center;
     justify-content: center;
     padding: 20px 45px;
+    margin-top: 5rem;
 }
 
 .card-carousel-container {
@@ -14,22 +15,27 @@
     position: relative;
 }
 
-.card-container{
+.card-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 50px; /* Espacio entre tarjetas */
+    gap: 20px; /* Espacio entre tarjetas */
+    transition: transform 0.3s ease;
 }
 
-.card-product-subscription{
+.card-product-subscription {
+    width: calc((100% / 5) - 20px); /* 20px es el espacio total para 5 tarjetas */
+}
+
+.card-product-subscription {
     display: flex; /* Usa Flexbox para alinear el contenido de la tarjeta */
     flex-direction: column; /* Alinea los elementos en columna */
     justify-content: space-between;
     align-items: center;
     text-align: center; 
     padding: 27px 45px;
-    width: 293px;
+    width: 293px; /* Ancho de la tarjeta */
     height: 100%;
     border-radius: 20px;
     border: 1px solid #ddd; /* Borde alrededor de la tarjeta */
@@ -38,7 +44,7 @@
     transition: transform 0.3s ease;
 }
 
-.card-product-image img{
+.card-product-image img {
     width: 100%; /* La imagen ocupa todo el ancho disponible */
     height: auto;
     object-fit: cover; /* Mantiene el aspecto de la imagen */
@@ -67,7 +73,7 @@
 }
 
 /* Boton añadir */
-.add-cart{
+.add-cart {
     width: 160px;
     background-color: #955EB7;
     color: white;
@@ -83,7 +89,7 @@
     border: solid 1px #955EB7;
 }
 
-/* Botones de control del carrusel*/
+/* Botones de control del carrusel */
 .card-carousel-btn {
     position: absolute;
     top: 50%;

@@ -1,0 +1,46 @@
+.icon-link {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; 
+    margin: 10vh 0;
+  }
+
+.icon-c {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+}
+
+.icon-c i {
+    font-size: 4.5rem; 
+    color: #955EB7;
+}
+
+.icon-c span {
+    font-size: 1.2rem; 
+    margin-top: 0.5rem; 
+    color: #955EB7;
+    
+}
+
+.icon-link i {
+    margin: 0 3rem; /* Espaciado horizontal entre íconos */
+}
+
+@media (max-width: 420px){
+
+    .icon-c i {
+        font-size: 3.5rem; 
+
+    }
+    .icon-c span {
+        font-size: 1rem;
+    }
+}
+
+
+
+
