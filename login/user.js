@@ -54,7 +54,15 @@ btnLogin.addEventListener('click', function (event) {
     const password = document.querySelector('#login-password').value;
 
     const users = getUsersFromLocalStorage();
-    const user = users.find(u => u.userEmail === email && u.userPassword === password);
+    let decodedPassword = '';
+    const shift = 3; // Número que defines para cambiar la posición de cada carácter (puede ser cualquier valor)
+
+    for (let i = 0; i < password.length; i++) {
+        const charCode = password.charCodeAt(i); // Obtener el código ASCII del carácter
+        const newCharCode = charCode + shift; // Cambiar la posición sumando un valor al código ASCII
+        decodedPassword += String.fromCharCode(newCharCode); // Convertir el nuevo código ASCII de vuelta a carácter
+    }
+    const user = users.find(u => u.userEmail === email && u.userPassword === decodedPassword);
 
     if (user) {
         localStorage.setItem('loggedInUser', JSON.stringify(user));
