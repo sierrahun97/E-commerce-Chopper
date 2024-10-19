@@ -8,12 +8,11 @@ class UsersController {
 
     encodePassword(userPassword) {
         let encodedPassword = '';
-        const shift = 3; // Número que defines para cambiar la posición de cada carácter (puede ser cualquier valor)
-
+        const shift = 3; 
         for (let i = 0; i < userPassword.length; i++) {
-            const charCode = userPassword.charCodeAt(i); // Obtener el código ASCII del carácter
-            const newCharCode = charCode + shift; // Cambiar la posición sumando un valor al código ASCII
-            encodedPassword += String.fromCharCode(newCharCode); // Convertir el nuevo código ASCII de vuelta a carácter
+            const charCode = userPassword.charCodeAt(i); 
+            const newCharCode = charCode + shift; 
+            encodedPassword += String.fromCharCode(newCharCode); 
         }
 
         return encodedPassword;
@@ -43,7 +42,7 @@ class UsersController {
 
 
 
-// Exportar una instancia de UsersController
+
 export const userController = new UsersController();
 
 

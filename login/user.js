@@ -60,7 +60,7 @@ btnLogin.addEventListener('click', function (event) {
 
     if (user) {
         localStorage.setItem('loggedInUser', JSON.stringify(user));
-        window.location.href = '../home.html';  
+        window.location.href = '../pages/home.html';  
     } else {
         alert('Correo o contraseña incorrectos.');
     }
