@@ -1,11 +1,12 @@
 /* Carrito de compras en el header */
 .shopping {
-    position: relative;
+    display: flex;
     text-align: right;
+    margin-right: 10px;
 }
 
 .shopping i {
-    font-size: 2.5rem; /* Ajusté el tamaño del ícono para que sea más proporcionado */
+    font-size: 1.5rem; /* Ajusté el tamaño del ícono para que sea más proporcionado */
     color: #555; /* Color más acorde con el tema del sitio */
     cursor: pointer;
     transition: all 0.25s ease;
@@ -15,69 +16,146 @@
     color: #955EB7; /* Usé tu color principal */
 }
 
-.shopping span.quantity {
-    position: absolute;
-    top: -5px;
-    right: -10px; /* Ajuste de posición para mejor alineación */
+.quantity {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -10px;
+    right: 5px;
     background-color: rgb(45, 214, 164);
-    padding: 3px 10px;
     border-radius: 50%;
     color: white;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .modal {
+    min-width: 400px;
     display: none; 
-    position: fixed;
-    z-index: 1;
-    right: 0;
-    top: 0;
-    width: 400px;
-    height: 100%;
-    overflow-y: auto;
     background-color: #fefefe;
     box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
-}
-.modal.show {
-    display: block;
+    overflow-y: auto;
+    z-index: 1;
 }
 
+.modal.show {
+    width: 25vw;
+    height: 100vh;
+    min-width: 400px;
+    padding: 20px;
+    margin-left: calc(100% - 400px);
+    display: block;
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+}
 
 .modal-content {
     padding: 20px;
     border: none;
 }
 
-.cart-item-content {
+.close-cart {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    
+}
+
+.close-cart p {
+    width: 20px;
+    height: 20px;
+    padding-bottom: 4px;
+    border-radius: 50%;
+    background-color: rgb(161, 32, 32);
+    color: white;
     display: flex;
     align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    font-family: "Poppins";
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+#cart-total {
+    margin-top: 10px;
+    font-family: "Jost";
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.cart-item-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 20px;
 }
 
 .cart-item-image {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
+    width: 40%;
+    height: auto;
     margin-right: 10px;
 }
 
+.product-cart-info {
+    width: 60%;
+}
+
+.product-cart-info h3 {
+    font-family: "Poppins";
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 15px;
+}
+
+.product-cart-info p {
+    font-family: "Jost";
+    font-size: 0.9rem;
+    line-height: 10px;
+    margin: 10px 0;
+}
+
+.cart-item-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
 .btn-remove, .btn-add {
-    margin: 5px;
+    margin: 0 5px;
     padding: 5px 10px;
-    background-color: #955EB7;
-    color: white;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
+    font-family: "Jost";
+    font-size: 0.8rem;
+}
+
+.btn-add {
+    background-color: #955EB7;
+    color: white;
+}
+
+.btn-remove {
+    background-color: white;
+    border: 2px solid #955EB7;
+    color: #955EB7;
 }
 
 .btn-pay {
+    width: 100%;
+    padding: 10px;
     background-color: rgb(45, 214, 164);
     color: white;
-    padding: 10px;
     border: none;
+    border-radius: 10px;
     cursor: pointer;
-    width: 100%;
 }
 
 .btn-pay:hover {

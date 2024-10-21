@@ -23,13 +23,15 @@ const displayCartItems = () => {
         productElement.classList.add("cart-item");
         productElement.innerHTML = `
             <div class="cart-item-content">
-                <img src="${item.url}" alt="${item.name}" class="cart-item-image">
-                <div>
+                <div class="cart-item-image">
+                    <img src="${item.url}" alt="${item.name}">
+                </div>
+                <div class="product-cart-info">
                     <h3>${item.name}</h3>
                     <p>Precio: $${item.price}</p>
                     <p>Cantidad: ${item.quantity}</p>
-                    <button class="btn-remove" data-index="${index}">Eliminar</button>
                     <button class="btn-add" data-index="${index}">Agregar</button>
+                    <button class="btn-remove" data-index="${index}">Eliminar</button>
                 </div>
             </div>
         `;
