@@ -34,7 +34,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: center; 
-    padding: 27px 45px;
+    padding: 20px;
     width: 293px; /* Ancho de la tarjeta */
     height: 100%;
     border-radius: 20px;
@@ -58,15 +58,19 @@
 }
 
 .card-product-info h3 {
-    font-size: 1.3rem;
+    margin-top: 10px;
+    font-family: "Poppins";
+    font-size: 1rem;
     font-weight: 600;
 }
 
 .card-product-info p {
-    font-size: 0.8rem;
+    font-family: "Jost";
+    font-size: 0.9rem;
 }
 
 .card-product-price {
+    font-family: "Jost";
     font-size: 1rem !important; 
     font-weight: 600;
     color: red;
@@ -80,7 +84,8 @@
     border: none;
     border-color: #955EB7;
     border-radius: 60px;
-    font-size: 1rem;
+    font-family: "Jost";
+    font-size: 0.9rem;
 }
 
 .add-cart:hover {
@@ -210,10 +215,13 @@
 }
 
 .catalog-filter h6 {
+    font-family: "Poppins";
     font-size: 1.2rem;
 }
 
 .catalog-filter button {
+    font-family: "Jost";
+    font-size: 1rem;
     background-color: transparent;
     border: none;
 }
@@ -242,7 +250,7 @@
 .img-product img {
     width: 12vw;
     min-width: 120px;
-
+    border-radius: 12px;
 }
 
 .info-product {
@@ -252,22 +260,33 @@
 }
 
 .info-product h5 {
+    font-family: "Poppins";
+    font-size: 1rem;
     font-weight: 600;
+    line-height: 20px;
+}
+
+.info-product p {
+    font-family: "Jost";
+    font-size: 0.9rem;
+    line-height: 15px;
 }
 
 #product-price {
     font-size: large;
     color: #8d0c0c;
     font-weight: 700;
+    line-height: 10px;
 }
 
 .info-product button {
     width: 100px;
-    padding: 8px;
+    padding: 5px;
     background-color: #955EB7;
     color: white;
+    font-family: "Jost";
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .info-product button:hover {
@@ -332,7 +351,7 @@
 
     .img-product img {
         width: 18vw;
-        min-width: 120px;
+        min-width: 140px;
     }
 }
 
