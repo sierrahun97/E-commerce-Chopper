@@ -57,31 +57,29 @@
                         <i id="open-cart" class="fas fa-shopping-cart"></i>
                         <span class="quantity">0</span>
                     </div>
-                    <!-- Carrito de compras Modal -->
-                    <div id="cart-modal" class="modal">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <h2>Tu Carrito</h2>
-                            <div id="cart-items"></div>
-                            <p id="cart-total"></p>
-                            <button id="checkout-btn" class="btn-pay">Pagar</button>
-                        </div>
-                    </div>
-
-
                     <a class="nav-link ms-2" href="../login/login.html">Login</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="separator-nav">
-        <div id="azul"></div>
-        <div id="light-green"></div>
-        <div id="turq"></div>
-        <div id="morado"></div>
-    </div>
+    <!-- <div class="separator-nav">
+        <div id="azul"></div><div id="light-green"></div><div id="turq"></div><div id="morado"></div>
+    </div> -->
     <main>
+        <!-- Carrito de compras Modal -->          
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <div class="close-cart">
+                    <p class="close">&times;</p>
+                </div>
+                <h2>Tu Carrito</h2>
+                <div id="cart-items"></div>
+                <p id="cart-total"></p>
+                <button id="checkout-btn" class="btn-pay">Pagar</button>
+            </div>
+        </div>
+
         <section class="slogan-text">
             <h1>Tienda para mascotas Chopper</h1>
             <p>En Chopper, creemos que cada mordisco, ronroneo y salto de alegría merece el mejor cuidado y cariño.</p>
@@ -303,12 +301,9 @@
         </section>
 
     </main>
-    <div class="separator-footer">
-        <div id="azul"></div>
-        <div id="light-green"></div>
-        <div id="turq"></div>
-        <div id="morado"></div>
-    </div>
+    <!-- <div class="separator-footer">
+        <div id="azul"></div><div id="light-green"></div><div id="turq"></div><div id="morado"></div>
+    </div> -->
 
     <footer id="footer">
         <div class="container-fluid py-4">
