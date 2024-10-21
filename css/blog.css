@@ -64,7 +64,14 @@
   background-color: #955EB7;
   color: white;
   border: none;
-  font-family: "Poppins";
+  font-family: "Jost";
   font-size: 0.9rem;
 }
 
+.likes {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #955EB7;
+  margin-left: 10px;
+  display: inline;
+}
