@@ -56,6 +56,18 @@
                     <div class="shopping">
                         <i id="open-cart" class="fas fa-shopping-cart"></i>
                         <span class="quantity">0</span>
+                        <!-- Carrito de compras Modal -->
+                        <div id="cart-modal" class="modal">
+                            <div class="modal-content">
+                                <div class="close-cart">
+                                    <p class="close">&times;</p>
+                                </div>
+                                <h2>Tu Carrito</h2>
+                                <div id="cart-items"></div>
+                                <p id="cart-total"></p>
+                                <button id="checkout-btn" class="btn-pay">Pagar</button>
+                            </div>
+                        </div>
                     </div>
                     <a class="nav-link ms-2" href="../login/login.html">Login</a>
                 </div>
@@ -67,18 +79,6 @@
         <div id="azul"></div><div id="light-green"></div><div id="turq"></div><div id="morado"></div>
     </div> -->
     <main>
-        <!-- Carrito de compras Modal -->          
-        <div id="cart-modal" class="modal">
-            <div class="modal-content">
-                <div class="close-cart">
-                    <p class="close">&times;</p>
-                </div>
-                <h2>Tu Carrito</h2>
-                <div id="cart-items"></div>
-                <p id="cart-total"></p>
-                <button id="checkout-btn" class="btn-pay">Pagar</button>
-            </div>
-        </div>
 
         <section class="slogan-text">
             <h1>Tienda para mascotas Chopper</h1>

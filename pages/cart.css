@@ -1,7 +1,6 @@
 /* Carrito de compras en el header */
 .shopping {
     display: flex;
-    text-align: right;
     margin-right: 10px;
 }
 
@@ -156,6 +155,9 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    font-family: "Jost";
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .btn-pay:hover {
