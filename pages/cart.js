@@ -78,7 +78,11 @@ const addToCartFromModal = (index) => {
 const updateCartCount = () => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartCountElement = document.querySelector('.shopping .quantity');
-    cartCountElement.textContent = cart.length;
+    let count = 0;
+    cart.forEach(item => {
+        count += item.quantity;
+    })
+    cartCountElement.textContent = count;
 };
 
 // Evento para el botón de pago
@@ -96,3 +100,7 @@ window.onclick = function(event) {
         closeModal();
     }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+})
