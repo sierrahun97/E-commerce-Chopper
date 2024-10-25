@@ -1,0 +1,55 @@
+--INSERCIÓN DE 10 REGISTROS TABLA CLIENTES
+INSERT INTO clientes (nombreCliente, email, contrasena, telefono, rol, isVip)
+VALUES
+('Juan Pérez', 'juan.perez@example.com', 'contrasena123', '5551234567', 'cliente', false),
+('Ana Gómez', 'ana.gomez@example.com', 'ana4567', '5552345678', 'cliente', true),
+('Carlos López', 'carlos.lopez@example.com', 'carlos7890', '5553456789', 'cliente', false),
+('Luisa Martínez', 'luisa.martinez@example.com', 'luisa2023', '5554567890', 'admin', true),
+('Pedro Sánchez', 'pedro.sanchez@example.com', 'pedro0987', '5555678901', 'cliente', false),
+('María Rodríguez', 'maria.rodriguez@example.com', 'maria2020', '5556789012', 'cliente', true),
+('Jorge Fernández', 'jorge.fernandez@example.com', 'jorge333', '5557890123', 'cliente', false),
+('Claudia Ramírez', 'claudia.ramirez@example.com', 'claudia2024', '5558901234', 'admin', true),
+('Sofía Torres', 'sofia.torres@example.com', 'sofia555', '5559012345', 'cliente', false),
+('Fernando Castro', 'fernando.castro@example.com', 'fernando444', '5550123456', 'cliente', true);
+
+--INSERCIÓN DE 10 REGISTROS TABLA PRODUCTOS
+INSERT INTO productos (codigoProducto, nombreProducto, precio, categoriaProducto, descripcion, stock, descuentoVip, isVip, url)
+VALUES
+('PROD001', 'Dog Chow Adultos Pollo 4Kg', 55000, 'Comida para perros', 'Comida para perros adultos sabor pollo. Marca: Purina Dog Chow.', 120, 5.00, true, '../img/'),
+('PROD002', 'Whiskas Adultos Pescado 1.5Kg', 38000, 'Comida para gatos', 'Alimento para gatos adultos sabor pescado. Marca: Whiskas.', 90, 3.00, false, '../img/'),
+('PROD003', 'Pedigree Cachorros Carne 3Kg', 45000, 'Comida para perros', 'Comida para cachorros con sabor carne. Marca: Pedigree.', 150, 4.00, true, '../img/'),
+('PROD004', 'Royal Canin Mini Adultos 2Kg', 85000, 'Comida para perros', 'Alimento para perros adultos de razas pequeñas. Marca: Royal Canin.', 50, 7.00, true, '../img/'),
+('PROD005', 'Purina One Gatos Esterilizados 1.6Kg', 62000, 'Comida para gatos', 'Comida para gatos esterilizados. Marca: Purina One.', 65, 5.50, false, '../img/'),
+('PROD006', 'NutreCan Adultos Pollo y Arroz 3Kg', 48000, 'Comida para perros', 'Alimento completo para perros adultos, sabor pollo y arroz. Marca: NutreCan.', 110, 4.00, false, '../img/'),
+('PROD007', 'Pro Plan Gatos Sensitive Skin 2Kg', 97000, 'Comida para gatos', 'Alimento para gatos con piel sensible. Marca: Pro Plan.', 40, 6.00, true, '../img/'),
+('PROD008', 'Hills Science Diet Adultos 3Kg', 94000, 'Comida para perros', 'Comida para perros adultos, fórmula balanceada. Marca: Hills Science Diet.', 70, 6.50, true, '../img/'),
+('PROD009', 'Whiskas Gatos Junior Pollo 1Kg', 30000, 'Comida para gatos', 'Alimento para gatitos jóvenes, sabor pollo. Marca: Whiskas.', 130, 3.00, false, '../img/'),
+('PROD010', 'Dog Chow Senior 7+ Carne 2.7Kg', 59000, 'Comida para perros', 'Comida para perros adultos mayores de 7 años, sabor carne. Marca: Purina Dog Chow.', 85, 5.00, true, '../img/');
+
+--INSERCIÓN DE 10 REGISTROS TABLA VENTAS
+INSERT INTO ventas (codigoVenta, fecha, total, idCliente)
+VALUES
+('VENTA001', '2024-10-15', 135000, 1),
+('VENTA002', '2024-10-16', 62000, 2),
+('VENTA003', '2024-10-17', 85000, 3),
+('VENTA004', '2024-10-18', 120000, 4),
+('VENTA005', '2024-10-19', 45000, 5),
+('VENTA006', '2024-10-20', 98000, 6),
+('VENTA007', '2024-10-21', 75000, 7),
+('VENTA008', '2024-10-22', 30000, 8),
+('VENTA009', '2024-10-23', 59000, 9),
+('VENTA010', '2024-10-24', 94000, 10);
+
+--INSERCIÓN DE 10 REGISTROS TABLA DETALLEVENTA
+INSERT INTO detalleVenta (idVenta, idProducto, cantidad, precioUnitario, subtotal)
+VALUES
+(1, 1, 2, 55000, 110000),
+(1, 2, 1, 38000, 38000),
+(2, 3, 1, 45000, 45000),
+(3, 4, 1, 85000, 85000),
+(4, 5, 2, 62000, 124000),
+(5, 6, 1, 48000, 48000),
+(6, 7, 1, 97000, 97000),
+(7, 8, 2, 94000, 188000),
+(8, 9, 1, 30000, 30000),
+(9, 10, 1, 59000, 59000);
