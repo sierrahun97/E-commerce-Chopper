@@ -41,11 +41,11 @@ const displayCartItems = () => {
         productElement.innerHTML = `
             <div class="cart-item-content">
                 <div class="cart-item-image">
-                    <img src="${item.url}" alt="${item.name}">
+                    <img src="${item.url}" alt="img-producto">
                 </div>
                 <div class="product-cart-info">
-                    <h3>${item.name}</h3>
-                    <p>Precio: $${item.price.toLocaleString()}</p>
+                    <h3>${item.nombre_producto || item.name}</h3>
+                    <p>Precio: $${item.precio || item.price}</p>
                     <p>Cantidad: ${item.quantity}</p>
                     <button class="btn-add" data-index="${index}">Agregar</button>
                     <button class="btn-remove" data-index="${index}">Eliminar</button>
@@ -58,7 +58,7 @@ const displayCartItems = () => {
         }, 50);
         
         cartItemsContainer.appendChild(productElement);
-        total += item.price * item.quantity;
+        total += (item.precio || item.price) * item.quantity;
     });
 
     document.getElementById("cart-total").innerText = `Total: $${total.toLocaleString()}`;

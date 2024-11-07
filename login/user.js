@@ -80,30 +80,47 @@ btnRegister.addEventListener('click', async function (event) {
     }
 });
 
-btnLogin.addEventListener('click', function (event) {
+btnLogin.addEventListener('click', async function (event) {
     event.preventDefault();
 
-    const email = document.querySelector('#login-email').value;
+    const emailIngresado = document.querySelector('#login-email').value;
     const password = document.querySelector('#login-password').value;
-    const users = getUsersFromLocalStorage();
-    let decodedPassword = '';
-    const shift = 3;
+    // const users = getUsersFromLocalStorage();
 
-    for (let i = 0; i < password.length; i++) {
-        const charCode = password.charCodeAt(i);
-        const newCharCode = charCode + shift;
-        decodedPassword += String.fromCharCode(newCharCode);
+    try {
+        let response = await fetch('http://localhost:8080/cliente/buscar/email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({ email: emailIngresado })
+        });
+    
+        if (!response.ok) {
+            throw new Error('Error en la solicitud');
+        }
+    
+        let user = await response.json();
+        let decodedPassword = '';
+        const shift = 3;
+    
+        for (let i = 0; i < password.length; i++) {
+            const charCode = password.charCodeAt(i);
+            const newCharCode = charCode + shift;
+            decodedPassword += String.fromCharCode(newCharCode);
+        }
+    
+        if (decodedPassword == user.contrasena) {
+            localStorage.setItem('loggedInUser', JSON.stringify(user));
+            localStorage.setItem('welcomeMessage', '¡Bienvenido a chopper!');
+            window.location.href = '../pages/home.html';
+        } else {
+            showAlert('Correo electronico o contraseña incorrectos.', 'error');
+        }
+    } catch (error) {
+        console.error('Error:', error);
     }
 
-    const user = users.find(u => u.userEmail === email && u.userPassword === decodedPassword);
-
-    if (user) {
-        localStorage.setItem('loggedInUser', JSON.stringify(user));
-        localStorage.setItem('welcomeMessage', '¡Bienvenido a chopper!');
-        window.location.href = '../pages/home.html';
-    } else {
-        showAlert('Correo electronico o contraseña incorrectos.', 'error');
-    }
 
     document.querySelector('#login-email').value = '';
     document.querySelector('#login-password').value = '';

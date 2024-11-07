@@ -24,10 +24,26 @@ function updateCartCount() {
     cartCountElement.textContent = totalQuantity;
 }
 
-function showProducts() {
+async function showProducts() {
     const productsSection = document.querySelector(".catalog-products");
     productsSection.innerHTML = '';
-    let storedItems = JSON.parse(localStorage.getItem("listaproductos")) || [];
+
+    let storedItems = [];
+
+    try {
+        let responseGenerated = await fetch('http://localhost:8080/producto/traer', {
+            method: 'GET'
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            storedItems = data;
+        })
+    } catch (error) {
+        console.log("Error trayendo los productos");
+        
+    }
+    
 
     storedItems.forEach(item => {
         productsSection.innerHTML += `
@@ -36,10 +52,10 @@ function showProducts() {
                     <img src="${item.url}" alt="image-product">
                 </div>
                 <div class="info-product">
-                    <h5>${item.name}</h5>
-                    <p>${item.category}</p>
-                    <p>${item.description}</p>
-                    <p id="product-price">$${item.price}</p>
+                    <h5>${item.nombre_producto}</h5>
+                    <p>${item.categoria_producto}</p>
+                    <p>${item.descripcion_producto}</p>
+                    <p id="product-price">$${item.precio}</p>
                     <button class="add-to-cart">Añadir</button>
                 </div>
             </div>`;
@@ -55,6 +71,6 @@ function showProducts() {
     updateCartCount(); 
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    showProducts();
+document.addEventListener("DOMContentLoaded", async function() {
+    await showProducts();
 });

@@ -2,11 +2,13 @@ document.addEventListener('DOMContentLoaded', function (){
   const adminClass = document.querySelector('.admin')
   if (localStorage.getItem("loggedInUser")){
     const userLog = JSON.parse(localStorage.getItem("loggedInUser"));
-    const role = userLog.userRole;
+    const role = userLog.rol;
     console.log (role)
-    if (role == 'CUSTOMER_USER'){
+    if (role != 'ADMIN'){
       adminClass.style.display = 'none'
     }
+  }else {
+    adminClass.style.display = 'none'
   }
 })
 console.log("Esto funciona");
