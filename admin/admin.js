@@ -88,8 +88,9 @@ document.getElementById('productForm').addEventListener('submit', async function
                     alert('Producto agregado correctamente!');
                     itemsController.addItem(productName, price, image, description, category);
                     sendProducts(producto);
+                    showAlert('Producto registrado correctamente!', 'success');
                 }else {
-                    alert('Error al crear el producto');
+                    showAlert('¡Error al registrar nuevo producto!', 'error');
                 }
             })
         } catch (error) {
@@ -101,4 +102,13 @@ document.getElementById('productForm').addEventListener('submit', async function
     itemsController.currentId()
 });
 
+function showAlert(message, type = 'error', duration = 3000) {
+    const alertBox = document.getElementById('custom-alert');
+    alertBox.textContent = message;
+    alertBox.className = `alert ${type}`;
+    alertBox.classList.remove('hidden');
 
+    setTimeout(() => {
+        alertBox.classList.add('hidden');
+    }, duration);
+}
