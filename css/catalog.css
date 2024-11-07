@@ -1,3 +1,61 @@
+.empty-cart-message {
+    text-align: center;
+    font-size: 20px;
+    color: #555;
+    padding: 30px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries para hacerlo más responsivo */
+@media (max-width: 1200px) {
+    .empty-cart-message {
+        font-size: 18px;
+        padding: 25px;
+        margin: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .empty-cart-message {
+        font-size: 17px;
+        padding: 20px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .empty-cart-message {
+        font-size: 16px;
+        padding: 15px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .empty-cart-message {
+        font-size: 15px;
+        padding: 12px;
+        margin: 5px;
+    }
+}
+
 
 .card-subscription {
     width: 100vw;
@@ -5,12 +63,11 @@
     justify-content: center;
     padding: 20px 45px;
     margin-top: 5rem;
-    display: none;
 }
 
 .card-carousel-container {
     width: 90%;
-    height: 386px;
+    height: 400px;
     overflow: hidden;
     margin: 20px auto;
     position: relative;
@@ -21,7 +78,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 20px; /* Espacio entre tarjetas */
+    gap: 30px; 
     transition: transform 0.3s ease;
 }
 
@@ -36,7 +93,7 @@
     align-items: center;
     text-align: center; 
     padding: 20px;
-    width: 293px; /* Ancho de la tarjeta */
+    width: 300px; /* Ancho de la tarjeta */
     height: 100%;
     border-radius: 20px;
     border: 1px solid #ddd; /* Borde alrededor de la tarjeta */

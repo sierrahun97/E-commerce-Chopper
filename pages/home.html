@@ -158,6 +158,7 @@
             <div class="card-carousel-container">
                 <button class="card-carousel-btn left" aria-label="Anterior">&#10094;</button>
                 <div class="card-container">
+                    
                     <!-- Tarjeta de producto 1 -->
                     <article class="card-product-subscription">
                         <div class="card-product-image">
@@ -166,11 +167,22 @@
                         <div class="card-product-info">
                             <h3>Go! Solutions Carnivore</h3>
                             <p>Categoria Cachorros</p>
-                            <p class="card-product-price">120.000</p>
+                            <p class="card-product-price">120000</p>
                             <button class="add-cart">Añadir</button>
                         </div>
-                    </article> 
-                
+                    </article>
+                    
+                    <!-- Modal de Carrito -->
+                    <div id="cart-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <div id="cart-items"></div>
+                            <div id="cart-total"></div>
+                            <button id="checkout-btn">Pagar</button>
+                        </div>
+                    </div>
+                    
+                    
                     <!-- Tarjeta de producto 2 -->
                     <article class="card-product-subscription">
                         <div class="card-product-image">
@@ -184,7 +196,6 @@
                         </div>
                     </article>
                 
-                    <!-- Tarjeta de producto 3 -->
                     <article class="card-product-subscription">
                         <div class="card-product-image">
                             <img src="../img/product-img/3.png" alt="">
@@ -196,8 +207,7 @@
                             <button class="add-cart">Añadir</button>
                         </div>
                     </article>
-                
-                    <!-- Tarjeta de producto 4 -->
+               
                     <article class="card-product-subscription">
                         <div class="card-product-image">
                             <img src="../img/product-img/4.png" alt="">
@@ -210,7 +220,6 @@
                         </div>
                     </article>
                 
-                    <!-- Tarjeta de producto 5 -->
                     <article class="card-product-subscription">
                         <div class="card-product-image">
                             <img src="../img/product-img/5.png" alt="">
@@ -374,12 +383,10 @@
             </div>
         </div>
     </footer>
-    <!-- <script type="module" src="../login/user.js"></script>  -->
     <script src="../js/home.js"></script>
     <script src="../js/alert.js"></script>
     <script src="../js/cardsproducts.js"></script>
     <script src="../js/catalog.js"></script>
-    <!-- <script src="../js/home.js"></script> -->
     <script src="./cart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

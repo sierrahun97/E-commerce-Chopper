@@ -206,8 +206,8 @@ form.sign-in-form {
 
 .right-panel {
   pointer-events: none;
-  padding: 3rem 12% 2rem 17%;
 }
+
 
 .panel .content {
   color: #fff;
@@ -219,11 +219,13 @@ form.sign-in-form {
   font-weight: 600;
   line-height: 1;
   font-size: 1.5rem;
+  margin-right: 30vh;
 }
 
 .panel p {
   font-size: 0.95rem;
   padding: 0.7rem 0;
+  margin-right: 30vh;
 }
 
 .btn.transparent {
@@ -234,6 +236,7 @@ form.sign-in-form {
   height: 41px;
   font-weight: 600;
   font-size: 0.8rem;
+  margin-right: 30vh;
 }
 
 .right-panel .image,
@@ -269,6 +272,7 @@ form.sign-in-form {
 
 .container.sign-up-mode .right-panel .image,
 .container.sign-up-mode .right-panel .content {
+  margin-left: 80px;
   transform: translateX(0%);
 }
 
