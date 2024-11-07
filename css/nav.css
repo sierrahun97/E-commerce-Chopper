@@ -9,7 +9,7 @@
 a {
     color: rgb(0, 0, 0) !important;
     font-family: "Poppins";
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .navbar-brand img {
@@ -63,7 +63,7 @@ body {
 }
 footer {
     margin-top: 3vh;
-    background-color: rgb(247, 244, 244);
+    background-color: #fff;
     font-family: "Poppins", sans-serif;
 }
 
@@ -117,13 +117,13 @@ footer form input {
 }
 
 .about-us img {
-    margin-top: 10vh;
+    margin-top: 2vh;
     max-width: 35vw;
     border-radius: 10px;
 }
 
 .about-text {
-    width: 40vw;
+    width: 42vw;
     margin: 0 60px;
     text-align: center;
 }
@@ -136,7 +136,7 @@ footer form input {
 }
 
 .about-text p {
-    font-size: 18px;
+    font-size: 20px;
     font-family: "Jost", sans-serif;
 }
 
@@ -148,6 +148,7 @@ footer form input {
     background-color: #955EB7;
     border-radius: 10px;
     font-weight: 600;
+    font-size: 1rem;
 }
 
 
