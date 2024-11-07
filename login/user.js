@@ -19,7 +19,7 @@ function showAlert(message, type = 'error', duration = 3000) {
     }, duration);
 }
 
-btnRegister.addEventListener('click', function (event) {
+btnRegister.addEventListener('click', async function (event) {
     event.preventDefault();
 
     const userName = document.querySelector('#user-name').value;
@@ -40,9 +40,38 @@ btnRegister.addEventListener('click', function (event) {
 
         const newUser = userController.addUser(userName, userEmail, userPhone, userPassword);
         users.push(newUser);
-        localStorage.setItem('users', JSON.stringify(users));
 
-        showAlert('¡Usuario registrado correctamente!', 'success');
+        const cliente = {
+            nombre_cliente: newUser.userName,
+            email: newUser.userEmail,
+            contrasena: newUser.userPassword,
+            telefono: newUser.userPhone,
+            rol: newUser.userRole,
+            is_vip: false
+        }
+
+        try {
+            let responseWaited = await fetch('http://localhost:8080/cliente/crear', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(cliente)
+            }).then(response => {
+                console.log(response);
+                if (response.ok) {
+                    localStorage.setItem('users', JSON.stringify(users));
+            
+                    showAlert('¡Usuario registrado correctamente!', 'success');
+                }else {
+                    showAlert('El usuario ya está registrado.', 'error');
+                }
+            });
+            
+        } catch (error) {
+            console.error("Error al realizar la operación:", error);
+        }
+
 
         document.querySelector('#user-name').value = '';
         document.querySelector('#user-email').value = '';
@@ -88,6 +117,3 @@ window.addEventListener('beforeunload', function() {
     document.querySelector('#login-email').value = '';
     document.querySelector('#login-password').value = '';
 });
-
-
-
