@@ -85,10 +85,10 @@ document.getElementById('productForm').addEventListener('submit', async function
             }).then(response => {
                 console.log(response);
                 if (response.ok) {
-                    alert('Producto agregado correctamente!');
+                    showAlert('Producto registrado correctamente!', 'success');
+                    // localStorage.setItem('listaproductos', JSON.stringify(producto))
                     itemsController.addItem(productName, price, image, description, category);
                     sendProducts(producto);
-                    showAlert('Producto registrado correctamente!', 'success');
                 }else {
                     showAlert('¡Error al registrar nuevo producto!', 'error');
                 }

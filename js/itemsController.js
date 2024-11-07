@@ -17,6 +17,7 @@ class ItemsController {
         this.items.push(product);
 
         localStorage.setItem('currentId', this.currentId);
+        localStorage.setItem('listaproductos', this.items)
     }
 }
 export const itemsController = new ItemsController();
