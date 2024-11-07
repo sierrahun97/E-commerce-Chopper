@@ -59,6 +59,7 @@ textarea {
 }
 
 .btn-form {
+    font-size: 1rem;
     padding: 10px;
     border: none;
     width: 200px;
@@ -66,6 +67,7 @@ textarea {
     background-color: #955EB7;
     border-radius: 10px;
     font-weight: 600;
+    
 }
 
 .btn-form:hover {

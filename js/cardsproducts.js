@@ -35,6 +35,6 @@ leftButton.addEventListener('click', () => {
     }
 });
 
-// Asegúrate de que se inicialice correctamente
+
 updateCarousel();
 window.addEventListener('resize', updateCarousel);

@@ -43,16 +43,16 @@
 }
 
 .text-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  overflow: hidden;
+  /* overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 4vh;
+  max-height: 7vh; */
 }
 
 .text-card p {
   font-family: "Jost";
-  font-family: 1rem;
+  font-size: 1.1rem;
   overflow: hidden;
   text-overflow: clip;
   max-height: 10vh;
