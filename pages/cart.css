@@ -1,19 +1,23 @@
-/* Carrito de compras en el header */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .shopping {
     display: flex;
-    text-align: right;
-    margin-right: 10px;
+    margin-right: 50px;
 }
 
 .shopping i {
-    font-size: 1.5rem; /* Ajusté el tamaño del ícono para que sea más proporcionado */
-    color: #555; /* Color más acorde con el tema del sitio */
+    font-size: 1.5rem; 
+    color: #555; 
     cursor: pointer;
     transition: all 0.25s ease;
 }
 
 .shopping i:hover {
-    color: #955EB7; /* Usé tu color principal */
+    color: #955EB7;
 }
 
 .quantity {
@@ -31,6 +35,7 @@
     align-items: center;
 }
 
+
 .modal {
     min-width: 400px;
     display: none; 
@@ -40,8 +45,9 @@
     z-index: 1;
 }
 
+
 .modal.show {
-    width: 25vw;
+    width: 15vw;
     height: 100vh;
     min-width: 400px;
     padding: 20px;
@@ -156,8 +162,12 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    font-family: "Jost";
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .btn-pay:hover {
     background-color: #38a685;
 }
+

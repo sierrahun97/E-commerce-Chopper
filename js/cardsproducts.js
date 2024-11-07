@@ -4,18 +4,27 @@ const rightButton = document.querySelector('.card-carousel-btn.right');
 const cards = document.querySelectorAll('.card-product-subscription');
 let currentIndex = 0;
 
+function getVisibleCardsCount() {
+    const containerWidth = cardContainer.clientWidth;
+    return containerWidth >= 768 ? 5 : 1; // 5 tarjetas en pantallas grandes, 1 en móviles
+}
+
 function updateCarousel() {
-    const cardWidth = cards[0].clientWidth;
-    cardContainer.style.transform = `translateX(-${currentIndex * (cardWidth + 30)}px)`;
+    const visibleCardsCount = getVisibleCardsCount();
+    const maxIndex = cards.length - visibleCardsCount;
+
+    cardContainer.style.transform = `translateX(-${currentIndex * (cards[0].clientWidth + 30)}px)`;
+    rightButton.disabled = currentIndex >= maxIndex; // Deshabilitar si se llega al final
+    leftButton.disabled = currentIndex === 0; // Deshabilitar si estamos en el inicio
 }
 
 rightButton.addEventListener('click', () => {
-    if (currentIndex < cards.length - 1) {
+    const visibleCardsCount = getVisibleCardsCount();
+    const maxIndex = cards.length - visibleCardsCount;
+
+    if (currentIndex < maxIndex) {
         currentIndex++;
         updateCarousel();
-    }
-    if (currentIndex >= cards.length - 5) {
-        rightButton.disabled = true;
     }
 });
 
@@ -24,10 +33,8 @@ leftButton.addEventListener('click', () => {
         currentIndex--;
         updateCarousel();
     }
-    rightButton.disabled = false; // Activa el botón derecho si no estamos en el último grupo
 });
 
+
 updateCarousel();
-
-
-
+window.addEventListener('resize', updateCarousel);

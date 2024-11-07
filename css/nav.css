@@ -9,7 +9,7 @@
 a {
     color: rgb(0, 0, 0) !important;
     font-family: "Poppins";
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .navbar-brand img {
@@ -63,11 +63,14 @@ body {
 }
 footer {
     margin-top: 3vh;
-    background-color: rgb(247, 244, 244);
+    background-color: #fff;
     font-family: "Poppins", sans-serif;
 }
 
 .botonFooter {
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 10px;
     background-color: #955EB7;
     color: white;
     border-color: #955EB7;
@@ -114,12 +117,13 @@ footer form input {
 }
 
 .about-us img {
+    margin-top: 2vh;
     max-width: 35vw;
     border-radius: 10px;
 }
 
 .about-text {
-    width: 40vw;
+    width: 42vw;
     margin: 0 60px;
     text-align: center;
 }
@@ -132,7 +136,26 @@ footer form input {
 }
 
 .about-text p {
+    font-size: 20px;
     font-family: "Jost", sans-serif;
+}
+
+.btn-home{
+    padding: 10px;
+    border: none;
+    width: 200px;
+    color: white;
+    background-color: #955EB7;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+
+.btn-home:hover {
+    background-color: white;
+    color: #955EB7;
+    border: 2px solid #955EB7;
 }
 
 .separator-nav {

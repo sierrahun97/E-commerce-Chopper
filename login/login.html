@@ -13,6 +13,7 @@
 
 
     <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="../css/alert.css">
 
 </head>
 
@@ -21,7 +22,7 @@
         <div class="forms-container">
           <div class="signin-signup">
             <form action="#" class="sign-in-form">
-              <h2 class="title">Inicia sesion</h2>
+              <h2 class="title">Inicia sesión</h2>
               <div class="input-field">
                 <i class="fas fa-user"></i>
                 <input id="login-email" type="text" placeholder="Correo electrónico" />
@@ -30,11 +31,11 @@
                 <i class="fas fa-lock"></i>
                 <input id="login-password" type="password" placeholder="Contraseña" />
               </div>
-              <input id="btn-login" type="submit" value="Inicia sesion" class="btn solid" />
+              <input id="btn-login" type="submit" value="Inicia sesión" class="btn solid" />
               <p class="social-text">Volver al <a href="../pages/home.html"><strong>inicio</strong></a></p>
             </form>
             <form action="#" class="sign-up-form">
-              <h2 class="title">Registrate</h2>
+              <h2 class="title">Regístrate</h2>
               <div class="input-field">
                 <i class="fas fa-user"></i>
                 <input id="user-name" name="user-name"  type="text" placeholder="Nombre completo" />
@@ -55,17 +56,17 @@
               <p class="social-text">Volver al <a href="../pages/home.html"><strong>inicio</strong></a></p>
             </form>
           </div>
-        </div>
+        </div>  
   
         <div class="panels-container">
           <div class="panel left-panel">
             <div class="content">
-              <h3>¿Quieres ser parte?</h3>
+              <h3>¿Quieres ser parte de Chopper?</h3>
               <p>
-                Unete con nosotros
+                Únete con nosotros
               </p>
               <button class="btn transparent" id="sign-up-btn">
-                Registrate
+                Regístrate
               </button>
             </div>
           </div>
@@ -73,16 +74,17 @@
             <div class="content">
               <h3>¿Eres parte de nosotros?</h3>
               <p>
-                Inicia sesion y disfruta de todos nuestros beneficios.
+                Inicia sesión y disfruta de todos nuestros beneficios.
               </p>
               <button class="btn transparent" id="sign-in-btn">
-                Iniciar sesion
+                Iniciar sesión
               </button>
             </div>
           </div>
           </div>
         </div>
       </div>
+      <div id="custom-alert" class="alert hidden"></div>
     <script src="login.js"></script>
     <script type="module" src="user.js"></script> 
     <script src="https://kit.fontawesome.com/16785a0a7f.js" crossorigin="anonymous"></script>

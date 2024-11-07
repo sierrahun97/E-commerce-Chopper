@@ -11,6 +11,7 @@
     <!-- <link rel="stylesheet" href="carousel.css"> -->
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="./cart.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -20,44 +21,61 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
         <div class="container-fluid">
-          <a class="navbar-brand" href="home.html">
-            <img src="../images/Logo_Chopper.png" alt="Logo_Chopper" class="img-fluid" width="100">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#barraNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          
-          <div class="collapse navbar-collapse" id="barraNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link" href="home.html">Inicio</a></li>
-              <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-              <li class="nav-item"><a class="nav-link active" href="aboutus.html">Sobre Nosotros</a></li>
-              <li class="nav-item"><a class="nav-link" href="contact.html">Contáctanos</a></li>
-              <li class="nav-item"><a class="nav-link btn btn-primary text-white"
-                style="background-color: #955EB7; color: white !important;" href="catalog.html">Productos</a></li>
-            <li class="nav-item admin">
-                <a class="nav-link btn btn-primary text-white"
-                    style="background-color: green; color: white !important;"
-                    href="../admin/admin.html">Administrador</a>
-            </li>
-            </ul>
-            <div class="d-flex align-items-center">
-              <form class="d-flex me-3" role="search">
+            <a class="navbar-brand" href="home.html">
+                <img src="../images/Logo_Chopper.png" alt="Logo_Chopper" class="img-fluid" width="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#barraNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="barraNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="aboutus.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Mi vet</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white"
+                            style="background-color: #955EB7; color: white !important;"
+                            href="catalog.html">Productos</a></li>
+                    <li class="nav-item admin">
+                        <a class="nav-link btn btn-primary text-white"
+                            style="background-color: green; color: white !important;"
+                            href="../admin/admin.html">Administrador</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <!-- <form class="d-flex me-3" role="search">
                 <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
                 <button class="btn btn-outline btn-custom" type="submit">Buscar</button>
-              </form>
-              <a href="#"><span class="material-symbols-rounded">shopping_cart</span></a>
-              <a class="nav-link ms-2" href="../login/login.html">Login</a>
+              </form> -->
+                    <div class="shopping">
+                        <i id="open-cart" class="fas fa-shopping-cart"></i>
+                        <span class="quantity">0</span>
+                        <!-- Carrito de compras Modal -->
+                        <div id="cart-modal" class="modal">
+                            <div class="modal-content">
+                                <div class="close-cart">
+                                    <p class="close">&times;</p>
+                                </div>
+                                <h2>Tu Carrito</h2>
+                                <div id="cart-items"></div>
+                                <p id="cart-total"></p>
+                                <button id="checkout-btn" class="btn-pay">Pagar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-link ms-2" href="../login/login.html">Login</a>
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
+    </nav>
     <div class="separator-nav">
         <div id="azul"></div><div id="light-green"></div><div id="turq"></div><div id="morado"></div>
     </div>
@@ -82,12 +100,13 @@
                         </div>
                     </div>
                     <label for="vet-message">Detalles</label>
-                    <textarea id="vet-message" name="message" rows="5" placeholder="Escriba su mensaje aquí" required></textarea>
+                    <textarea id="vet-message" name="message" rows="5" placeholder="Escriba su mensaje aquí"
+                        required></textarea>
                     <button class="btn-form" type="submit">Enviar</button>
                 </form>
             </div>
         </section>
-        
+
         <section id="form2" class="contact">
             <div class="form-title">
                 <h2>Contáctanos</h2>
@@ -99,7 +118,8 @@
                         </div>
                         <div class="form-group">
                             <label for="contact-lastname">Apellido</label>
-                            <input type="text" id="contact-lastname" name="lastname" placeholder="Apellido aquí" required>
+                            <input type="text" id="contact-lastname" name="lastname" placeholder="Apellido aquí"
+                                required>
                         </div>
                     </div>
                     <div class="inputs-row">
@@ -113,17 +133,18 @@
                         </div>
                     </div>
                     <label for="contact-message">Detalles</label>
-                    <textarea id="contact-message" name="message" rows="5" placeholder="Escriba su mensaje aquí" required></textarea>
+                    <textarea id="contact-message" name="message" rows="5" placeholder="Escriba su mensaje aquí"
+                        required></textarea>
                     <button class="btn-form" type="submit">Enviar</button>
                 </form>
             </div>
             <img src="../img/contact-form.png" alt="about-us">
-        </section>        
+        </section>
     </main>
     <div class="separator-footer">
         <div id="azul"></div><div id="light-green"></div><div id="turq"></div><div id="morado"></div>
     </div>
-   <footer id="footer">
+    <footer id="footer">
         <div class="container-fluid py-4">
             <div class="d-flex flex-column flex-md-row gap-4 gap-md-2 align-items-end">
                 <div class="container-fluid">
@@ -132,10 +153,10 @@
                         <p><strong>Únete a nuestra comunidad</strong><br>
                             Recibe información actualizada de los productos y descuentos que ofrecemos.
                         </p>
-                        <form>
+                        <!-- <form>
                             <input type="email" name="user_email" placeholder="Correo electrónico">
                             <button type="button" class="btn btn-primary botonFooter">Suscribirse</button>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
                 <div class="container-fluid">
@@ -180,7 +201,11 @@
             </div>
         </div>
     </footer>
+    <script src="https://kit.fontawesome.com/16785a0a7f.js" crossorigin="anonymous"></script>
+    <script src="../js/home.js"></script>
     <script src="../js/contact.js"></script>
+    <script src="./cart.js"></script>
+    <script src="https://kit.fontawesome.com/16785a0a7f.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

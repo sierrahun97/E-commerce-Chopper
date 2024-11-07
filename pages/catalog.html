@@ -38,7 +38,7 @@
                     <li class="nav-item"><a class="nav-link" href="home.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link active" href="aboutus.html">Sobre Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contáctanos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Mi vet</a></li>
                     <li class="nav-item"><a class="nav-link btn btn-primary text-white"
                             style="background-color: #955EB7; color: white !important;"
                             href="catalog.html">Productos</a></li>
@@ -49,13 +49,25 @@
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
-                    <form class="d-flex me-3" role="search">
+                    <!-- <form class="d-flex me-3" role="search">
                         <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
                         <button class="btn btn-outline btn-custom" type="submit">Buscar</button>
-                    </form>
+                    </form> -->
                     <div class="shopping">
                         <i id="open-cart" class="fas fa-shopping-cart"></i>
                         <span class="quantity">0</span>
+                        <!-- Carrito de compras Modal -->
+                        <div id="cart-modal" class="modal">
+                            <div class="modal-content">
+                                <div class="close-cart">
+                                    <p class="close">&times;</p>
+                                </div>
+                                <h2>Tu Carrito</h2>
+                                <div id="cart-items"></div>
+                                <p id="cart-total"></p>
+                                <button id="checkout-btn" class="btn-pay">Pagar</button>
+                            </div>
+                        </div>
                     </div>
                     <a class="nav-link ms-2" href="../login/login.html">Login</a>
                 </div>
@@ -63,22 +75,10 @@
         </div>
     </nav>
 
-    <!-- <div class="separator-nav">
+    <div class="separator-nav">
         <div id="azul"></div><div id="light-green"></div><div id="turq"></div><div id="morado"></div>
-    </div> -->
+    </div>
     <main>
-        <!-- Carrito de compras Modal -->          
-        <div id="cart-modal" class="modal">
-            <div class="modal-content">
-                <div class="close-cart">
-                    <p class="close">&times;</p>
-                </div>
-                <h2>Tu Carrito</h2>
-                <div id="cart-items"></div>
-                <p id="cart-total"></p>
-                <button id="checkout-btn" class="btn-pay">Pagar</button>
-            </div>
-        </div>
 
         <section class="slogan-text">
             <h1>Tienda para mascotas Chopper</h1>
@@ -112,21 +112,20 @@
                 </div>
             </div>
         </section>
-
         <section class="card-subscription">
-            <h2>Más vendidos</h2>
+            <h2>Mas vendidos</h2>
             <div class="card-carousel-container">
                 <button class="card-carousel-btn left" aria-label="Anterior">&#10094;</button>
                 <div class="card-container">
                     <!-- Tarjeta de producto 1 -->
                     <article class="card-product-subscription">
                         <div class="card-product-image">
-                            <img src="../img/purina.png" alt="">
+                            <img src="../img/product-img/1.png" alt="">
                         </div>
                         <div class="card-product-info">
-                            <h3>Nombre Producto 1</h3>
-                            <p>Categoria 1</p>
-                            <p class="card-product-price">Precio 1</p>
+                            <h3>Go! Solutions Carnivore</h3>
+                            <p>Categoria Cachorros</p>
+                            <p class="card-product-price">120.000</p>
                             <button class="add-cart">Añadir</button>
                         </div>
                     </article>
@@ -134,12 +133,12 @@
                     <!-- Tarjeta de producto 2 -->
                     <article class="card-product-subscription">
                         <div class="card-product-image">
-                            <img src="../img/purina.png" alt="">
+                            <img src="../img/product-img/2.png" alt="">
                         </div>
                         <div class="card-product-info">
-                            <h3>Nombre Producto 2</h3>
-                            <p>Categoria 2</p>
-                            <p class="card-product-price">Precio 2</p>
+                            <h3>Hill's Perro Adulto Mature</h3>
+                            <p>Categoria Perro Adulto </p>
+                            <p class="card-product-price">110.000</p>
                             <button class="add-cart">Añadir</button>
                         </div>
                     </article>
@@ -147,12 +146,12 @@
                     <!-- Tarjeta de producto 3 -->
                     <article class="card-product-subscription">
                         <div class="card-product-image">
-                            <img src="../img/purina.png" alt="">
+                            <img src="../img/product-img/3.png" alt="">
                         </div>
                         <div class="card-product-info">
-                            <h3>Nombre Producto 3</h3>
-                            <p>Categoria 3</p>
-                            <p class="card-product-price">Precio 3</p>
+                            <h3>Go! Solutions Control de Pesos</h3>
+                            <p>Categoria Gatos Adultos</p>
+                            <p class="card-product-price">130.000</p>
                             <button class="add-cart">Añadir</button>
                         </div>
                     </article>
@@ -160,12 +159,12 @@
                     <!-- Tarjeta de producto 4 -->
                     <article class="card-product-subscription">
                         <div class="card-product-image">
-                            <img src="../img/purina.png" alt="">
+                            <img src="../img/product-img/4.png" alt="">
                         </div>
                         <div class="card-product-info">
-                            <h3>Nombre Producto 4</h3>
-                            <p>Categoria 4</p>
-                            <p class="card-product-price">Precio 4</p>
+                            <h3>Hill's Perfecta Digestion</h3>
+                            <p>Categoria Perro Adulto</p>
+                            <p class="card-product-price">110.000</p>
                             <button class="add-cart">Añadir</button>
                         </div>
                     </article>
@@ -173,85 +172,82 @@
                     <!-- Tarjeta de producto 5 -->
                     <article class="card-product-subscription">
                         <div class="card-product-image">
-                            <img src="../img/purina.png" alt="">
+                            <img src="../img/product-img/5.png" alt="">
                         </div>
                         <div class="card-product-info">
-                            <h3>Nombre Producto 5</h3>
-                            <p>Categoria 5</p>
-                            <p class="card-product-price">Precio 5</p>
+                            <h3>Go! Solutions Digestion</h3>
+                            <p>Categoria Perro Adulto</p>
+                            <p class="card-product-price">115.000</p>
                             <button class="add-cart">Añadir</button>
                         </div>
                     </article>
 
                     <article class="card-product-subscription">
                         <div class="card-product-image">
-                            <img src="../img/purina.png" alt="">
+                            <img src="../img/product-img/6.png" alt="">
                         </div>
                         <div class="card-product-info">
-                            <h3>Nombre Producto 6</h3>
-                            <p>Categoria 6</p>
-                            <p class="card-product-price">Precio 5</p>
+                            <h3>Royal Canin Mediano Adulto</h3>
+                            <p>Categoria perros Adultos</p>
+                            <p class="card-product-price">145.000</p>
                             <button class="add-cart">Añadir</button>
                         </div>
                     </article>
 
                     <article class="card-product-subscription">
                         <div class="card-product-image">
-                            <img src="../img/purina.png" alt="">
+                            <img src="../img/product-img/7.png" alt="">
                         </div>
                         <div class="card-product-info">
-                            <h3>Nombre Producto 7</h3>
-                            <p>Categoria 7</p>
-                            <p class="card-product-price">Precio 5</p>
+                            <h3>Pro Plan raza Cachorros</h3>
+                            <p>Categoria cachorros</p>
+                            <p class="card-product-price">132.0000</p>
                             <button class="add-cart">Añadir</button>
                         </div>
                     </article>
 
                     <article class="card-product-subscription">
                         <div class="card-product-image">
-                            <img src="../img/purina.png" alt="">
+                            <img src="../img/product-img/8.png" alt="">
                         </div>
                         <div class="card-product-info">
-                            <h3>Nombre Producto 8</h3>
-                            <p>Categoria 8</p>
-                            <p class="card-product-price">Precio 5</p>
+                            <h3>Royal Canin Exigente Mini</h3>
+                            <p>Categoria Perros Pequeños</p>
+                            <p class="card-product-price">132.000</p>
                             <button class="add-cart">Añadir</button>
                         </div>
                     </article>
 
                     <article class="card-product-subscription">
                         <div class="card-product-image">
-                            <img src="../img/purina.png" alt="">
+                            <img src="../img/product-img/9.png" alt="">
                         </div>
                         <div class="card-product-info">
-                            <h3>Nombre Producto 9</h3>
-                            <p>Categoria 9</p>
-                            <p class="card-product-price">Precio 5</p>
+                            <h3>Hill's Gato Adulto Mature</h3>
+                            <p>Categoria Gatos Adultos</p>
+                            <p class="card-product-price">154.000</p>
                             <button class="add-cart">Añadir</button>
                         </div>
                     </article>
-
                     <article class="card-product-subscription">
                         <div class="card-product-image">
-                            <img src="../img/purina.png" alt="">
+                            <img src="../img/product-img/10.png" alt="">
                         </div>
                         <div class="card-product-info">
-                            <h3>Nombre Producto 10</h3>
-                            <p>Categoria 10</p>
-                            <p class="card-product-price">Precio 5</p>
+                            <h3>Pro Plan Adulto</h3>
+                            <p>Categoria Perros Adultos</p>
+                            <p class="card-product-price">144.000</p>
                             <button class="add-cart">Añadir</button>
                         </div>
                     </article>
-
                 </div>
                 <button class="card-carousel-btn right" aria-label="Siguiente">&#10095;</button>
             </div>
         </section>
-
         <h2 class="sections-titles">Nuestros productos</h2>
 
         <section class="catalog-section">
-            <article class="catalog-filter">
+            <!-- <article class="catalog-filter">
                 <div class="filter-content">
                     <h6>Filtros</h6>
                     <hr>
@@ -262,7 +258,7 @@
                     <button>Precio</button>
                     <hr>
                 </div>
-            </article>
+            </article> -->
             <article class="catalog-products">
                 <!-- <div class="item-catalog">
                     <div class="img-product">
@@ -301,9 +297,9 @@
         </section>
 
     </main>
-    <!-- <div class="separator-footer">
+    <div class="separator-footer">
         <div id="azul"></div><div id="light-green"></div><div id="turq"></div><div id="morado"></div>
-    </div> -->
+    </div>
 
     <footer id="footer">
         <div class="container-fluid py-4">
@@ -314,10 +310,10 @@
                         <p><strong>Únete a nuestra comunidad</strong><br>
                             Recibe información actualizada de los productos y descuentos que ofrecemos.
                         </p>
-                        <form>
+                        <!-- <form>
                             <input type="email" name="user_email" placeholder="Correo electrónico">
                             <button type="button" class="btn btn-primary botonFooter">Suscribirse</button>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
                 <div class="container-fluid">
@@ -366,6 +362,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="../js/home.js"></script>
     <script type="module" src="../js/catalog.js"></script>
     <script type="module" src="../js/itemsController.js"></script>
     <script src="../js/cardsproducts.js"></script>
