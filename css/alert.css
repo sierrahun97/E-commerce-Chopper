@@ -3,7 +3,7 @@
 }
 
 #custom-alert {
-    position: absolute;
+    position: sticky;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -11,7 +11,7 @@
 }
 
 .alert {
-    position: absolute;
+    position: sticky;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -27,15 +27,15 @@
 }
 
 .alert.success {
-    background-color: #4CAF50;
+    background-color: #0EB1D2;
     color: white;
-    border-left: 5px solid #388E3C;
+    border-left: 5px solid #30c6da;
 }
 
 .alert.error {
-    background-color: #f44336;
+    background-color: #bb281e;
     color: white;
-    border-left: 5px solid #C62828;
+    border-left: 5px solid #991515;
 }
 
 .alert.info {

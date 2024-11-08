@@ -36,7 +36,7 @@ input[type="text"], input[type="number"], input[type="file"], select, textarea {
 .butonform {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #0EB1D2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -45,5 +45,5 @@ input[type="text"], input[type="number"], input[type="file"], select, textarea {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #26dce9;
 } 

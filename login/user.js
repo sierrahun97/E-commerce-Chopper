@@ -134,3 +134,4 @@ window.addEventListener('beforeunload', function() {
     document.querySelector('#login-email').value = '';
     document.querySelector('#login-password').value = '';
 });
+

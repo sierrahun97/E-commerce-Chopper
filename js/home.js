@@ -11,34 +11,56 @@ document.addEventListener('DOMContentLoaded', function (){
     adminClass.style.display = 'none'
   }
 })
-console.log("Esto funciona");
 
-// const track = document.querySelector('.carousel-track');
-// const prevButton = document.querySelector('.carousel-btn-prev');
-// const nextButton = document.querySelector('.carousel-btn-next');
-// let currentSlide = 0;
+document.addEventListener('DOMContentLoaded', function () {
+  // Verificar si el usuario está logueado y si tiene un rol
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  const adminClass = document.querySelector('.admin');
+  const userGreeting = document.getElementById('user-greeting');
+  const loginLink = document.getElementById('logged');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
 
-// function updateCarouselPosition() {
-//   const slideWidth = document.querySelector('.carousel-slide').clientWidth;
-//   track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-// }
+  // Si hay un usuario logueado
+  if (loggedInUser) {
+    const role = loggedInUser.rol;
+    const userName = loggedInUser.nombre_cliente.split(' ')[0]; // Toma el primer nombre
+    // Mostrar u ocultar la opción de admin según el rol
+    if (role !== 'ADMIN') {
+      adminClass.style.display = 'none';
+    }
+    else if (!role){
+      adminClass.style.display = 'none';
+    }
+    // Mostrar el nombre del usuario en el navbar
+    if (userGreeting) {
+      userGreeting.textContent = `Hola, ${userName}.`;
+      userGreeting.style.display = 'inline';
+    }
+    if (loginLink) {
+      loginLink.style.display = 'none';
+    }
+    // Agregar el botón de cerrar sesión si no existe
+    if (!document.getElementById('logout-btn') && dropdownMenu) {
+      const logoutBtn = document.createElement('button');
+      logoutBtn.textContent = 'Cerrar sesión';
+      logoutBtn.classList.add('dropdown-item');
+      logoutBtn.id = 'logout-btn';
+      dropdownMenu.appendChild(logoutBtn);
 
-// nextButton.addEventListener('click', () => {
-//   const totalSlides = document.querySelectorAll('.carousel-slide').length;
-//   if (currentSlide < totalSlides - 1) {
-//     currentSlide++;
-//     updateCarouselPosition();
-//   }
-// });
+      // Evento para cerrar sesión
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('loggedInUser'); // Elimina la sesión
+        window.location.href = 'home.html'; // Redirige al home
+      });
+    }
+  } else {
+    // Si no hay usuario logueado, mostrar "Iniciar sesión"
+    if (userGreeting) {
+      userGreeting.style.display = 'none';
+    }
+    if (loginLink) {
+      loginLink.style.display = 'inline';
+    }
+  }
 
-// prevButton.addEventListener('click', () => {
-//   if (currentSlide > 0) {
-//     currentSlide--;
-//     updateCarouselPosition();
-//   }
-// });
-
-// window.addEventListener('resize', updateCarouselPosition);
-
-
-
+});
