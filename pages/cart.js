@@ -104,7 +104,7 @@ const updateCartCount = () => {
 
 const addToCart = (product) => {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProductIndex = cart.findIndex(item => item.name === product.name);
+    const existingProductIndex = cart.findIndex(item => (item.name == product.name || item.nombre_producto == product.name));
 
     if (existingProductIndex === -1) {
         cart.push(product);
